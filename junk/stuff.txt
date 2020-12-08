@@ -1,0 +1,2213 @@
+https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_day.csv
+
+TAR_XZ_FILENAME = 'archive.tar.xz'
+DIRECTORY_NAME = '/usr/share/doc/'
+
+xz_file = lzma.LZMAFile(TAR_XZ_FILENAME, mode='w')
+
+with tarfile.open(mode='w', fileobj=xz_file) as tar_xz_file:
+    tar_xz_file.add(DIRECTORY_NAME)
+
+xz_file.close()
+
+/usr/bin/par2 c -r$myTEMPpercent -a $myARCHIVE-pars $myARCHIVE.*
+
+
+
+ordered_dict = collections.OrderedDict()
+ordered_dict['1'] = "one"
+ordered_dict['2'] = "two"
+ordered_dict['3'] = "three"
+ordered_dict['4'] = "four"
+ordered_dict['5'] = "five"
+print("Printing Ordered Dictionary : ")
+for key,value in ordered_dict.items():
+  print("key : {0},value : {1}".format(key,value))
+
+
+',2020-04-03T20:48:48.339Z,64.0972,-148.9537,5.5,2.9,ml,,,,1.01,ak,ak0204bspoew,2020-04-03T21:02:53.162Z,"26km N of Healy, Alaska",earthquake,,0.3,,,automatic,ak,ak'
+
+'
+0: "RID", ,
+1: "TIME", 2020-04-03T20:51:42.060Z,
+2: "LATITUDE", 17.8521,
+3: "LONGITUDE", -66.796,
+4: "DEPTH", 7,
+5: "MAGNITUDE", 2.88,
+6: "MAGNITUDETYPE", md,
+7: "NST", 14,
+8: "GAP", 254,
+9: "DMIN", 0.1485,
+10: "RMS", 0.19,
+11: "NETWORK", pr,
+12: "EQID", pr2020094025,
+13: "UPDATED", 2020-04-03T21:08:24.753Z,
+14: "PLACE", "15km S of Indios, Puerto Rico",
+15: "TYPE",  earthquake,
+16: "HORIZONTALERROR",  0.72,
+17: "DEPTHERROR",  0.49,
+18: "MAGNITUDEERROR",  0.21,
+19: "MAGNST",  12,
+20: "STATUS",  reviewed,
+21: "LOCATIONSOURCE",  pr,
+22: "MAGNITUDESOURCE",  pr'
+
+SQLstr INSERT INTO usgsCsvData ( TIME, LATITUDE, LONGITUDE, DEPTH, MAGNITUDE, MAGNITUDETYPE, NST, GAP, DMIN, RMS, NETWORK, EQID, UPDATED, PLACE, TYPE, HORIZONTALERROR, DEPTHERROR, MAGNITUDEERROR, MAGNST, STATUS, LOCATIONSOURCE, MAGNITUDESOURCE ) VALUES ( "2020-04-04 06:18:25", 54.8309, 166.1747, 20.69, 5.4, "mww", , 112, 4.801, 0.69, "us", "us70008nel", "2020-04-04 06:36:55", "42km SSE of Nikol'skoye, Russia", "earthquake", 8.6, 6.3, 0.078, 16, "reviewed", "us", "us" )
+
+
+SELECT *
+FROM `usgsCsvData`
+WHERE `RID` IN
+(SELECT `RID`
+FROM `usgsCsvData`
+GROUP BY `RID`
+HAVING COUNT(*) >1)
+
+ SELECT * FROM `usgsCsvData` WHERE `EQID` IN (SELECT `EQID` FROM `usgsCsvData` GROUP BY `EQID` HAVING COUNT(*) >1) order by `TIME`;
+
+from datetime import datetime
+from dateutil import tz
+
+# METHOD 1: Hardcode zones:
+from_zone = tz.gettz('UTC')
+to_zone = tz.gettz('America/New_York')
+
+# METHOD 2: Auto-detect zones:
+from_zone = tz.tzutc()
+to_zone = tz.tzlocal()
+
+# utc = datetime.utcnow()
+utc = datetime.strptime('2011-01-21 02:37:21', '%Y-%m-%d %H:%M:%S')
+
+# Tell the datetime object that it's in UTC time zone since
+# datetime objects are 'naive' by default
+utc = utc.replace(tzinfo=from_zone)
+
+# Convert time zone
+central = utc.astimezone(to_zone)
+
+
+2020-04-15 10:48:55
+
+{'RID': 18505, 'TIMEZ': '2020-04-15 10:57:09', 'TIMEL': '2020-04-15 10:57:09', 'LATITUDE': 33.6873, 'LONGITUDE': -116.51, 'DEPTH': 0, 'MAGNITUDE': 1, 'MAGNITUDETYPE': 'ml', 'NST': 9, 'GAP': 239, 'DMIN': 0.1567, 'RMS': 0.21, 'NETWORK': 'ci', 'EQID': 'ci39389368', 'UPDATEDZ': '2020-04-15 11:00:57',
+'UPDATEDL': '2020-04-15 11:00:57', 'PLACE': '11km WSW of Rancho Mirage, CA', 'TYPE': 'earthquake', 'HORIZONTALERROR': 3.05, 'DEPTHERROR': 31.61, 'MAGNITUDEERROR': 0.438, 'MAGNST': 7, 'STATUS': 'automatic', 'LOCATIONSOURCE': 'ci', 'MAGNITUDESOURCE': 'ci'}
+
+
+libmygpo-qt5
+
+
+ ['2020-04-18T10:22:25.030Z', '35.7438316', '-117.5786667', '3.24', '1.04', 'ml', '18', '74', '0.07337', '0.12', 'ci', 'ci39394944', '2020-04-18T10:24:30.923Z', '16km W of Searles Valley, CA', 'earthquake', '0.42', '1.18', '0.082', '5', 'automatic', 'ci', 'ci']
+getUSGS.50 thisLine ['2020-04-18T10:22:25.030Z', '35.7438316', '-117.5786667', '3.24', '1.04', 'ml', '18', '74', '0.07337', '0.12', 'ci', 'ci39394944', '2020-04-18T10:24:30.923Z', '16km W of Searles Valley, CA', 'earthquake', '0.42', '1.18', '0.082', '5', 'automatic', 'ci', 'ci']
+
+INSERT INTO USGSData (
+	RID,
+	TIMEZ,
+	TIMEL,
+	LATITUDE,
+	LONGITUDE,
+	EVENTDEPTH,
+	MAGNITUDE,
+	MAGNITUDETYPE,
+	NST,
+	GAP,
+	DMIN,
+	RMS,
+	NETWORK,
+	EQID,
+	UPDATEDZ,
+	UPDATEDL,
+	PLACE,
+	EVENTTYPE,
+	HORIZONTALERROR,
+	DEPTHERROR,
+	MAGNITUDEERROR,
+	MAGNST,
+	STATUS,
+	LOCATIONSOURCE,
+	MAGNITUDESOURCE)
+VALUES (
+	0, "2020-04-30 01:22:47", "2020-04-29 19:22:47", 61.4163, -150.0614, 0, 1.4, "ml", 0, 0, 0.0, 0.68, "ak", "ak0205k4r8sg", "2020-04-30 01:27:17", "2020-04-29 19:27:17", "13km SSW of Big Lake, Alaska", ", 0.0, 0.2, 0.0, 0, "automatic", "ak", "ak", 31.5, "earthquake" )
+
+
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near
+'09:18:47, 2020-05-02 03:18:47, 38.8271675, -122.8013306, 2.91, 0.56, md, 8, 135,' at line 1
+
+
+SELECT LATITUDE, LONGITUDE, SQRT(
+    POW(69.1 * (LATITUDE - [41.0]), 2) +
+    POW(69.1 * ([-112.0] - LONGITUDE) * COS(LATITUDE / 57.3), 2)) AS DISTANCEFROM
+FROM USGSData ORDER BY DISTANCEFROM;
+
+
+SELECT TIMEL, UPDATEDL, PLACE, EVENTTYPE, MAGNITUDE LATITUDE, LONGITUDE, SQRT(
+    POW(69.1 * (LATITUDE - 41.0), 2) +
+    POW(69.1 * (-112.0 - LONGITUDE) * COS(LATITUDE / 57.3), 2)) AS DISTANCEFROM
+
+    select TIMEL, UPDATEDL, EQID, MAGNITUDE, EVENTDEPTH, EVENTTYPE, PLACE, LATITUDE, LONGITUD, SQRT(POW(69.1 * (LATITUDE - [41.0]), 2) + POW(69.1 * ([-112.0] - LONGITUDE) * COS(LATITUDE / 57.3), 2)) AS DISTANCEFROM from USGSData
+
+
+select TIMEL, UPDATEDL, EVENTDEPTH, EVENTTYPE, MAGNITUDE, PLACE, LATITUDE, LONGITUDE, (6371 * (atan2(sqrt(power(0.754709580222772 * sin((-1.9547687622336491 - radians(LONGITUDE))), 2) + power(cos(radians(LATITUDE)) * 0.6560590289905073 - sin(radians(LATITUDE)) * 0.754709580222772 * cos((-1.9547687622336491 - radians(LONGITUDE))), 2)), sin(radians(LATITUDE)) * 0.6560590289905073 + cos(radians(LATITUDE)) * 0.754709580222772 * cos((-1.9547687622336491 - radians(LONGITUDE)))))) as KMFROM
+
+
+<Storage {
+'STARTNUM': '0',
+'QUERYNUM': '1',
+'STARTRECNUM': 0,
+'myCurrentQueries': {
+	'RID': 1,
+	'QUERIESINTITLE': 'all by date, rectangular highlights at geo special points',
+	'QUERIESINRETURNTO': '/presets',
+	'SQLSELECT': 'select TIMEL, UPDATEDL, EQID, MAGNITUDE, EVENTDEPTH, EVENTTYPE, PLACE, LATITUDE, LONGITUDE from USGSData',
+	'SQLWHERE': 'where place like "%Utah%"',
+	'SQLGROUPBY': 'group by EQID',
+	'SQLHAVING': '',
+	'SQLORDERBY': 'order by TIMEL desc, UPDATEDL desc',
+	'SQLLIMIT': 'limit 0 100',
+	'STARTRECNUM': 0,
+	'QUERYNUM': '1', 'NUMROWS': 53619, 'ROWNUM': 0, 'REGION0NAME': 'REGION0', 'REGION0DESCRIPTION': 'near home', 'REGION0KMFROM': Decimal('0.00'), 'REGION0NORTH': 41.5, 'REGION0WEST': -113.0, 'REGION0SOUTH': 40.0, 'REGION0EAST': -111.0, 'REGION1NAME': 'REGION1', 'REGION1DESCRIPTION': 'next out from home', 'REGION1NORTH': 43.0, 'REGION1WEST': -115.0, 'REGION1SOUTH': 39.0, 'REGION1EAST': -109.0, 'REGION2NAME': 'REGION2', 'REGION2DESCRIPTION': 'UT, CO, ID, NV Rocky Mountain area', 'REGION2KMFROM': Decimal('0.00'), 'REGION2NORTH': 45.0, 'REGION2WEST': -117.0, 'REGION2SOUTH': 37.0, 'REGION2EAST': -107.0, 'REGION3NAME': 'REGION3', 'REGION3DESCRIPTION': '49th parallel to 29th, west coast to OK', 'REGION3KMFROM': Decimal('0.00'), 'REGION3NORTH': 49.0, 'REGION3WEST': -126.0, 'REGION3SOUTH': 29.0, 'REGION3EAST': -95.0, 'PGNUM': 1, 'OFPGS': 537, 'ISLOADED': 0, 'REGION1KMFROM': Decimal('0.00')}}>
+
+
+
+/usr/bin/python3.8 /opt/pycharm-community-eap/plugins/python-ce/helpers/pydev/pydevconsole.py --mode=client --port=32899
+import sys; print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['/wsource/python/earthquakeSuckerDEV'])
+PyDev console: starting.
+Python 3.8.2 (default, Apr  8 2020, 14:31:25)
+[GCC 9.3.0] on linux
+import web
+help(web)
+Help on package web:
+NAME
+    web - web.py: makes web apps (http://webpy.org)
+PACKAGE CONTENTS
+    application
+    browser
+    contrib (package)
+    db
+    debugerror
+    form
+    http
+    httpserver
+    net
+    py3helpers
+    session
+    template
+    test
+    utils
+    webapi
+    wsgi
+SUBMODULES
+    web
+DATA
+    __contributors__ = 'see http://webpy.org/changes'
+    __license__ = 'public domain'
+    config = <Storage {'__doc__': '\nA configuration object f...tponly': T...
+    ctx = <ThreadedDict {'__doc__': '\nA `storage` object ...`\n   : A str...
+    generators = _Feature((2, 2, 0, 'alpha', 1), (2, 3, 0, 'final', 0), 0)
+    iters = (<class 'list'>, <class 'tuple'>, <class 'set'>, <class 'froze...
+    re_compile = <web.utils.Memoize object>
+VERSION
+    0.51
+AUTHOR
+    ['Aaron Swartz <me@aaronsw.com>', 'Anand Chitipothu <anandology@gmail.com>']
+FILE
+    /usr/lib/python3.8/site-packages/web/__init__.py
+from web import utils
+help(utils)
+Help on module web.utils in web:
+NAME
+    web.utils
+DESCRIPTION
+    General Utilities
+    (part of web.py)
+CLASSES
+    _thread._local(builtins.object)
+        ThreadedDict
+    builtins.dict(builtins.object)
+        Storage
+            Counter
+    builtins.object
+        CaptureStdout
+        IterBetter
+        Memoize
+        Profile
+
+    class CaptureStdout(builtins.object)
+     |  CaptureStdout(func)
+     |
+     |  Captures everything `func` prints to stdout and returns it instead.
+     |
+     |      >>> def idiot():
+     |      ...     print("foo")
+     |      >>> capturestdout(idiot)()
+     |      'foo\n'
+     |
+     |  **WARNING:** Not threadsafe!
+     |
+     |  Methods defined here:
+     |
+     |  __call__(self, *args, **keywords)
+     |      Call self as a function.
+     |
+     |  __init__(self, func)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+    class Counter(Storage)
+     |  Keeps count of how many times something is added.
+     |
+     |  >>> c = counter()
+     |  >>> c.add('x')
+     |  >>> c.add('x')
+     |  >>> c.add('x')
+     |  >>> c.add('x')
+     |  >>> c.add('x')
+     |  >>> c.add('y')
+     |  >>> c['y']
+     |  1
+     |  >>> c['x']
+     |  5
+     |  >>> c.most()
+     |  ['x']
+     |
+     |  Method resolution order:
+     |      Counter
+     |      Storage
+     |      builtins.dict
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __repr__(self)
+     |      Return repr(self).
+     |
+     |  add(self, n)
+     |
+     |  least(self)
+     |      Returns the keys with minimum count.
+     |
+     |  most(self)
+     |      Returns the keys with maximum count.
+     |
+     |  percent(self, key)
+     |      Returns what percentage a certain key is of all entries.
+     |
+     |      >>> c = counter()
+     |      >>> c.add('x')
+     |      >>> c.add('x')
+     |      >>> c.add('x')
+     |      >>> c.add('y')
+     |      >>> c.percent('x')
+     |      0.75
+     |      >>> c.percent('y')
+     |      0.25
+     |
+     |  sorted_items(self)
+     |      Returns items sorted by value.
+     |
+     |      >>> c = counter()
+     |      >>> c.add('x')
+     |      >>> c.add('x')
+     |      >>> c.add('y')
+     |      >>> c.sorted_items()
+     |      [('x', 2), ('y', 1)]
+     |
+     |  sorted_keys(self)
+     |      Returns keys sorted by value.
+     |
+     |      >>> c = counter()
+     |      >>> c.add('x')
+     |      >>> c.add('x')
+     |      >>> c.add('y')
+     |      >>> c.sorted_keys()
+     |      ['x', 'y']
+     |
+     |  sorted_values(self)
+     |      Returns values sorted by value.
+     |
+     |      >>> c = counter()
+     |      >>> c.add('x')
+     |      >>> c.add('x')
+     |      >>> c.add('y')
+     |      >>> c.sorted_values()
+     |      [2, 1]
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from Storage:
+     |
+     |  __delattr__(self, key)
+     |      Implement delattr(self, name).
+     |
+     |  __getattr__(self, key)
+     |
+     |  __setattr__(self, key, value)
+     |      Implement setattr(self, name, value).
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from Storage:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.dict:
+     |
+     |  __contains__(self, key, /)
+     |      True if the dictionary has the specified key, else False.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __eq__(self, value, /)
+     |      Return self==value.
+     |
+     |  __ge__(self, value, /)
+     |      Return self>=value.
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __getitem__(...)
+     |      x.__getitem__(y) <==> x[y]
+     |
+     |  __gt__(self, value, /)
+     |      Return self>value.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__(self, /)
+     |      Implement iter(self).
+     |
+     |  __le__(self, value, /)
+     |      Return self<=value.
+     |
+     |  __len__(self, /)
+     |      Return len(self).
+     |
+     |  __lt__(self, value, /)
+     |      Return self<value.
+     |
+     |  __ne__(self, value, /)
+     |      Return self!=value.
+     |
+     |  __reversed__(self, /)
+     |      Return a reverse iterator over the dict keys.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  __sizeof__(...)
+     |      D.__sizeof__() -> size of D in memory, in bytes
+     |
+     |  clear(...)
+     |      D.clear() -> None.  Remove all items from D.
+     |
+     |  copy(...)
+     |      D.copy() -> a shallow copy of D
+     |
+     |  get(self, key, default=None, /)
+     |      Return the value for key if key is in the dictionary, else default.
+     |
+     |  items(...)
+     |      D.items() -> a set-like object providing a view on D's items
+     |
+     |  keys(...)
+     |      D.keys() -> a set-like object providing a view on D's keys
+     |
+     |  pop(...)
+     |      D.pop(k[,d]) -> v, remove specified key and return the corresponding value.
+     |      If key is not found, d is returned if given, otherwise KeyError is raised
+     |
+     |  popitem(self, /)
+     |      Remove and return a (key, value) pair as a 2-tuple.
+     |
+     |      Pairs are returned in LIFO (last-in, first-out) order.
+     |      Raises KeyError if the dict is empty.
+     |
+     |  setdefault(self, key, default=None, /)
+     |      Insert key with a value of default if key is not in the dictionary.
+     |
+     |      Return the value for key if key is in the dictionary, else default.
+     |
+     |  update(...)
+     |      D.update([E, ]**F) -> None.  Update D from dict/iterable E and F.
+     |      If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
+     |      If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
+     |      In either case, this is followed by: for k in F:  D[k] = F[k]
+     |
+     |  values(...)
+     |      D.values() -> an object providing a view on D's values
+     |
+     |  ----------------------------------------------------------------------
+     |  Class methods inherited from builtins.dict:
+     |
+     |  fromkeys(iterable, value=None, /) from builtins.type
+     |      Create a new dictionary with keys from iterable and values set to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.dict:
+     |
+     |  __new__(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from builtins.dict:
+     |
+     |  __hash__ = None
+
+    class IterBetter(builtins.object)
+     |  IterBetter(iterator)
+     |
+     |  Returns an object that can be used as an iterator
+     |  but can also be used via __getitem__ (although it
+     |  cannot go backwards -- that is, you cannot request
+     |  `iterbetter[0]` after requesting `iterbetter[1]`).
+     |
+     |      >>> import itertools
+     |      >>> c = iterbetter(itertools.count())
+     |      >>> c[1]
+     |      1
+     |      >>> c[5]
+     |      5
+     |      >>> c[3]
+     |      Traceback (most recent call last):
+     |          ...
+     |      IndexError: already passed 3
+     |
+     |  It is also possible to get the first value of the iterator or None.
+     |
+     |      >>> c = iterbetter(iter([3, 4, 5]))
+     |      >>> print(c.first())
+     |      3
+     |      >>> c = iterbetter(iter([]))
+     |      >>> print(c.first())
+     |      None
+     |
+     |  For boolean test, IterBetter peeps at first value in the itertor without effecting the iteration.
+     |
+     |      >>> c = iterbetter(iter(range(5)))
+     |      >>> bool(c)
+     |      True
+     |      >>> list(c)
+     |      [0, 1, 2, 3, 4]
+     |      >>> c = iterbetter(iter([]))
+     |      >>> bool(c)
+     |      False
+     |      >>> list(c)
+     |      []
+     |
+     |  Methods defined here:
+     |
+     |  __bool__ = __nonzero__(self)
+     |
+     |  __getitem__(self, i)
+     |
+     |  __init__(self, iterator)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__(self)
+     |
+     |  __nonzero__(self)
+     |
+     |  first(self, default=None)
+     |      Returns the first element of the iterator or None when there are no
+     |      elements.
+     |
+     |      If the optional argument default is specified, that is returned instead
+     |      of None when there are no elements.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+    class Memoize(builtins.object)
+     |  Memoize(func, expires=None, background=True)
+     |
+     |  'Memoizes' a function, caching its return values for each input.
+     |  If `expires` is specified, values are recalculated after `expires` seconds.
+     |  If `background` is specified, values are recalculated in a separate thread.
+     |
+     |      >>> calls = 0
+     |      >>> def howmanytimeshaveibeencalled():
+     |      ...     global calls
+     |      ...     calls += 1
+     |      ...     return calls
+     |      >>> fastcalls = memoize(howmanytimeshaveibeencalled)
+     |      >>> howmanytimeshaveibeencalled()
+     |      1
+     |      >>> howmanytimeshaveibeencalled()
+     |      2
+     |      >>> fastcalls()
+     |      3
+     |      >>> fastcalls()
+     |      3
+     |      >>> import time
+     |      >>> fastcalls = memoize(howmanytimeshaveibeencalled, .1, background=False)
+     |      >>> fastcalls()
+     |      4
+     |      >>> fastcalls()
+     |      4
+     |      >>> time.sleep(.2)
+     |      >>> fastcalls()
+     |      5
+     |      >>> def slowfunc():
+     |      ...     time.sleep(.1)
+     |      ...     return howmanytimeshaveibeencalled()
+     |      >>> fastcalls = memoize(slowfunc, .2, background=True)
+     |      >>> fastcalls()
+     |      6
+     |      >>> timelimit(.05)(fastcalls)()
+     |      6
+     |      >>> time.sleep(.2)
+     |      >>> timelimit(.05)(fastcalls)()
+     |      6
+     |      >>> timelimit(.05)(fastcalls)()
+     |      6
+     |      >>> time.sleep(.2)
+     |      >>> timelimit(.05)(fastcalls)()
+     |      7
+     |      >>> fastcalls = memoize(slowfunc, None, background=True)
+     |      >>> threading.Thread(target=fastcalls).start()
+     |      >>> time.sleep(.01)
+     |      >>> fastcalls()
+     |      9
+     |
+     |  Methods defined here:
+     |
+     |  __call__(self, *args, **keywords)
+     |      Call self as a function.
+     |
+     |  __init__(self, func, expires=None, background=True)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+    class Profile(builtins.object)
+     |  Profile(func)
+     |
+     |  Profiles `func` and returns a tuple containing its output
+     |  and a string with human-readable profiling information.
+     |
+     |      >>> import time
+     |      >>> out, inf = profile(time.sleep)(.001)
+     |      >>> out
+     |      >>> inf[:10].strip()
+     |      'took 0.0'
+     |
+     |  Methods defined here:
+     |
+     |  __call__(self, *args)
+     |      Call self as a function.
+     |
+     |  __init__(self, func)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+    class Storage(builtins.dict)
+     |  A Storage object is like a dictionary except `obj.foo` can be used
+     |  in addition to `obj['foo']`.
+     |
+     |      >>> o = storage(a=1)
+     |      >>> o.a
+     |      1
+     |      >>> o['a']
+     |      1
+     |      >>> o.a = 2
+     |      >>> o['a']
+     |      2
+     |      >>> del o.a
+     |      >>> o.a
+     |      Traceback (most recent call last):
+     |          ...
+     |      AttributeError: 'a'
+     |
+     |  Method resolution order:
+     |      Storage
+     |      builtins.dict
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __delattr__(self, key)
+     |      Implement delattr(self, name).
+     |
+     |  __getattr__(self, key)
+     |
+     |  __repr__(self)
+     |      Return repr(self).
+     |
+     |  __setattr__(self, key, value)
+     |      Implement setattr(self, name, value).
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.dict:
+     |
+     |  __contains__(self, key, /)
+     |      True if the dictionary has the specified key, else False.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __eq__(self, value, /)
+     |      Return self==value.
+     |
+     |  __ge__(self, value, /)
+     |      Return self>=value.
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __getitem__(...)
+     |      x.__getitem__(y) <==> x[y]
+     |
+     |  __gt__(self, value, /)
+     |      Return self>value.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__(self, /)
+     |      Implement iter(self).
+     |
+     |  __le__(self, value, /)
+     |      Return self<=value.
+     |
+     |  __len__(self, /)
+     |      Return len(self).
+     |
+     |  __lt__(self, value, /)
+     |      Return self<value.
+     |
+     |  __ne__(self, value, /)
+     |      Return self!=value.
+     |
+     |  __reversed__(self, /)
+     |      Return a reverse iterator over the dict keys.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  __sizeof__(...)
+     |      D.__sizeof__() -> size of D in memory, in bytes
+     |
+     |  clear(...)
+     |      D.clear() -> None.  Remove all items from D.
+     |
+     |  copy(...)
+     |      D.copy() -> a shallow copy of D
+     |
+     |  get(self, key, default=None, /)
+     |      Return the value for key if key is in the dictionary, else default.
+     |
+     |  items(...)
+     |      D.items() -> a set-like object providing a view on D's items
+     |
+     |  keys(...)
+     |      D.keys() -> a set-like object providing a view on D's keys
+     |
+     |  pop(...)
+     |      D.pop(k[,d]) -> v, remove specified key and return the corresponding value.
+     |      If key is not found, d is returned if given, otherwise KeyError is raised
+     |
+     |  popitem(self, /)
+     |      Remove and return a (key, value) pair as a 2-tuple.
+     |
+     |      Pairs are returned in LIFO (last-in, first-out) order.
+     |      Raises KeyError if the dict is empty.
+     |
+     |  setdefault(self, key, default=None, /)
+     |      Insert key with a value of default if key is not in the dictionary.
+     |
+     |      Return the value for key if key is in the dictionary, else default.
+     |
+     |  update(...)
+     |      D.update([E, ]**F) -> None.  Update D from dict/iterable E and F.
+     |      If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
+     |      If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
+     |      In either case, this is followed by: for k in F:  D[k] = F[k]
+     |
+     |  values(...)
+     |      D.values() -> an object providing a view on D's values
+     |
+     |  ----------------------------------------------------------------------
+     |  Class methods inherited from builtins.dict:
+     |
+     |  fromkeys(iterable, value=None, /) from builtins.type
+     |      Create a new dictionary with keys from iterable and values set to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.dict:
+     |
+     |  __new__(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from builtins.dict:
+     |
+     |  __hash__ = None
+
+    class ThreadedDict(_thread._local)
+     |  Thread local storage.
+     |
+     |      >>> d = ThreadedDict()
+     |      >>> d.x = 1
+     |      >>> d.x
+     |      1
+     |      >>> import threading
+     |      >>> def f(): d.x = 2
+     |      ...
+     |      >>> t = threading.Thread(target=f)
+     |      >>> t.start()
+     |      >>> t.join()
+     |      >>> d.x
+     |      1
+     |
+     |  Method resolution order:
+     |      ThreadedDict
+     |      _thread._local
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __contains__(self, key)
+     |
+     |  __del__(self)
+     |
+     |  __delitem__(self, key)
+     |
+     |  __getitem__(self, key)
+     |
+     |  __hash__(self)
+     |      Return hash(self).
+     |
+     |  __init__(self)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self)
+     |      Return repr(self).
+     |
+     |  __setitem__(self, key, value)
+     |
+     |  __str__ = __repr__(self)
+     |
+     |  clear(self)
+     |
+     |  copy(self)
+     |
+     |  get(self, key, default=None)
+     |
+     |  has_key = __contains__(self, key)
+     |
+     |  items(self)
+     |
+     |  iter = iterkeys(self)
+     |
+     |  iteritems(self)
+     |
+     |  iterkeys(self)
+     |
+     |  itervalues(self)
+     |
+     |  keys(self)
+     |
+     |  pop(self, key, *args)
+     |
+     |  popitem(self)
+     |
+     |  setdefault(self, key, default=None)
+     |
+     |  update(self, *args, **kwargs)
+     |
+     |  values(self)
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods defined here:
+     |
+     |  clear_all()
+     |      Clears all ThreadedDict instances.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _thread._local:
+     |
+     |  __delattr__(self, name, /)
+     |      Implement delattr(self, name).
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __setattr__(self, name, value, /)
+     |      Implement setattr(self, name, value).
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _thread._local:
+     |
+     |  __new__(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+
+    capturestdout = class CaptureStdout(builtins.object)
+     |  capturestdout(func)
+     |
+     |  Captures everything `func` prints to stdout and returns it instead.
+     |
+     |      >>> def idiot():
+     |      ...     print("foo")
+     |      >>> capturestdout(idiot)()
+     |      'foo\n'
+     |
+     |  **WARNING:** Not threadsafe!
+     |
+     |  Methods defined here:
+     |
+     |  __call__(self, *args, **keywords)
+     |      Call self as a function.
+     |
+     |  __init__(self, func)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+    counter = class Counter(Storage)
+     |  Keeps count of how many times something is added.
+     |
+     |  >>> c = counter()
+     |  >>> c.add('x')
+     |  >>> c.add('x')
+     |  >>> c.add('x')
+     |  >>> c.add('x')
+     |  >>> c.add('x')
+     |  >>> c.add('y')
+     |  >>> c['y']
+     |  1
+     |  >>> c['x']
+     |  5
+     |  >>> c.most()
+     |  ['x']
+     |
+     |  Method resolution order:
+     |      Counter
+     |      Storage
+     |      builtins.dict
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __repr__(self)
+     |      Return repr(self).
+     |
+     |  add(self, n)
+     |
+     |  least(self)
+     |      Returns the keys with minimum count.
+     |
+     |  most(self)
+     |      Returns the keys with maximum count.
+     |
+     |  percent(self, key)
+     |      Returns what percentage a certain key is of all entries.
+     |
+     |      >>> c = counter()
+     |      >>> c.add('x')
+     |      >>> c.add('x')
+     |      >>> c.add('x')
+     |      >>> c.add('y')
+     |      >>> c.percent('x')
+     |      0.75
+     |      >>> c.percent('y')
+     |      0.25
+     |
+     |  sorted_items(self)
+     |      Returns items sorted by value.
+     |
+     |      >>> c = counter()
+     |      >>> c.add('x')
+     |      >>> c.add('x')
+     |      >>> c.add('y')
+     |      >>> c.sorted_items()
+     |      [('x', 2), ('y', 1)]
+     |
+     |  sorted_keys(self)
+     |      Returns keys sorted by value.
+     |
+     |      >>> c = counter()
+     |      >>> c.add('x')
+     |      >>> c.add('x')
+     |      >>> c.add('y')
+     |      >>> c.sorted_keys()
+     |      ['x', 'y']
+     |
+     |  sorted_values(self)
+     |      Returns values sorted by value.
+     |
+     |      >>> c = counter()
+     |      >>> c.add('x')
+     |      >>> c.add('x')
+     |      >>> c.add('y')
+     |      >>> c.sorted_values()
+     |      [2, 1]
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from Storage:
+     |
+     |  __delattr__(self, key)
+     |      Implement delattr(self, name).
+     |
+     |  __getattr__(self, key)
+     |
+     |  __setattr__(self, key, value)
+     |      Implement setattr(self, name, value).
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors inherited from Storage:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.dict:
+     |
+     |  __contains__(self, key, /)
+     |      True if the dictionary has the specified key, else False.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __eq__(self, value, /)
+     |      Return self==value.
+     |
+     |  __ge__(self, value, /)
+     |      Return self>=value.
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __getitem__(...)
+     |      x.__getitem__(y) <==> x[y]
+     |
+     |  __gt__(self, value, /)
+     |      Return self>value.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__(self, /)
+     |      Implement iter(self).
+     |
+     |  __le__(self, value, /)
+     |      Return self<=value.
+     |
+     |  __len__(self, /)
+     |      Return len(self).
+     |
+     |  __lt__(self, value, /)
+     |      Return self<value.
+     |
+     |  __ne__(self, value, /)
+     |      Return self!=value.
+     |
+     |  __reversed__(self, /)
+     |      Return a reverse iterator over the dict keys.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  __sizeof__(...)
+     |      D.__sizeof__() -> size of D in memory, in bytes
+     |
+     |  clear(...)
+     |      D.clear() -> None.  Remove all items from D.
+     |
+     |  copy(...)
+     |      D.copy() -> a shallow copy of D
+     |
+     |  get(self, key, default=None, /)
+     |      Return the value for key if key is in the dictionary, else default.
+     |
+     |  items(...)
+     |      D.items() -> a set-like object providing a view on D's items
+     |
+     |  keys(...)
+     |      D.keys() -> a set-like object providing a view on D's keys
+     |
+     |  pop(...)
+     |      D.pop(k[,d]) -> v, remove specified key and return the corresponding value.
+     |      If key is not found, d is returned if given, otherwise KeyError is raised
+     |
+     |  popitem(self, /)
+     |      Remove and return a (key, value) pair as a 2-tuple.
+     |
+     |      Pairs are returned in LIFO (last-in, first-out) order.
+     |      Raises KeyError if the dict is empty.
+     |
+     |  setdefault(self, key, default=None, /)
+     |      Insert key with a value of default if key is not in the dictionary.
+     |
+     |      Return the value for key if key is in the dictionary, else default.
+     |
+     |  update(...)
+     |      D.update([E, ]**F) -> None.  Update D from dict/iterable E and F.
+     |      If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
+     |      If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
+     |      In either case, this is followed by: for k in F:  D[k] = F[k]
+     |
+     |  values(...)
+     |      D.values() -> an object providing a view on D's values
+     |
+     |  ----------------------------------------------------------------------
+     |  Class methods inherited from builtins.dict:
+     |
+     |  fromkeys(iterable, value=None, /) from builtins.type
+     |      Create a new dictionary with keys from iterable and values set to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.dict:
+     |
+     |  __new__(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from builtins.dict:
+     |
+     |  __hash__ = None
+
+    iterbetter = class IterBetter(builtins.object)
+     |  iterbetter(iterator)
+     |
+     |  Returns an object that can be used as an iterator
+     |  but can also be used via __getitem__ (although it
+     |  cannot go backwards -- that is, you cannot request
+     |  `iterbetter[0]` after requesting `iterbetter[1]`).
+     |
+     |      >>> import itertools
+     |      >>> c = iterbetter(itertools.count())
+     |      >>> c[1]
+     |      1
+     |      >>> c[5]
+     |      5
+     |      >>> c[3]
+     |      Traceback (most recent call last):
+     |          ...
+     |      IndexError: already passed 3
+     |
+     |  It is also possible to get the first value of the iterator or None.
+     |
+     |      >>> c = iterbetter(iter([3, 4, 5]))
+     |      >>> print(c.first())
+     |      3
+     |      >>> c = iterbetter(iter([]))
+     |      >>> print(c.first())
+     |      None
+     |
+     |  For boolean test, IterBetter peeps at first value in the itertor without effecting the iteration.
+     |
+     |      >>> c = iterbetter(iter(range(5)))
+     |      >>> bool(c)
+     |      True
+     |      >>> list(c)
+     |      [0, 1, 2, 3, 4]
+     |      >>> c = iterbetter(iter([]))
+     |      >>> bool(c)
+     |      False
+     |      >>> list(c)
+     |      []
+     |
+     |  Methods defined here:
+     |
+     |  __bool__ = __nonzero__(self)
+     |
+     |  __getitem__(self, i)
+     |
+     |  __init__(self, iterator)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__(self)
+     |
+     |  __nonzero__(self)
+     |
+     |  first(self, default=None)
+     |      Returns the first element of the iterator or None when there are no
+     |      elements.
+     |
+     |      If the optional argument default is specified, that is returned instead
+     |      of None when there are no elements.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+    memoize = class Memoize(builtins.object)
+     |  memoize(func, expires=None, background=True)
+     |
+     |  'Memoizes' a function, caching its return values for each input.
+     |  If `expires` is specified, values are recalculated after `expires` seconds.
+     |  If `background` is specified, values are recalculated in a separate thread.
+     |
+     |      >>> calls = 0
+     |      >>> def howmanytimeshaveibeencalled():
+     |      ...     global calls
+     |      ...     calls += 1
+     |      ...     return calls
+     |      >>> fastcalls = memoize(howmanytimeshaveibeencalled)
+     |      >>> howmanytimeshaveibeencalled()
+     |      1
+     |      >>> howmanytimeshaveibeencalled()
+     |      2
+     |      >>> fastcalls()
+     |      3
+     |      >>> fastcalls()
+     |      3
+     |      >>> import time
+     |      >>> fastcalls = memoize(howmanytimeshaveibeencalled, .1, background=False)
+     |      >>> fastcalls()
+     |      4
+     |      >>> fastcalls()
+     |      4
+     |      >>> time.sleep(.2)
+     |      >>> fastcalls()
+     |      5
+     |      >>> def slowfunc():
+     |      ...     time.sleep(.1)
+     |      ...     return howmanytimeshaveibeencalled()
+     |      >>> fastcalls = memoize(slowfunc, .2, background=True)
+     |      >>> fastcalls()
+     |      6
+     |      >>> timelimit(.05)(fastcalls)()
+     |      6
+     |      >>> time.sleep(.2)
+     |      >>> timelimit(.05)(fastcalls)()
+     |      6
+     |      >>> timelimit(.05)(fastcalls)()
+     |      6
+     |      >>> time.sleep(.2)
+     |      >>> timelimit(.05)(fastcalls)()
+     |      7
+     |      >>> fastcalls = memoize(slowfunc, None, background=True)
+     |      >>> threading.Thread(target=fastcalls).start()
+     |      >>> time.sleep(.01)
+     |      >>> fastcalls()
+     |      9
+     |
+     |  Methods defined here:
+     |
+     |  __call__(self, *args, **keywords)
+     |      Call self as a function.
+     |
+     |  __init__(self, func, expires=None, background=True)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+    profile = class Profile(builtins.object)
+     |  profile(func)
+     |
+     |  Profiles `func` and returns a tuple containing its output
+     |  and a string with human-readable profiling information.
+     |
+     |      >>> import time
+     |      >>> out, inf = profile(time.sleep)(.001)
+     |      >>> out
+     |      >>> inf[:10].strip()
+     |      'took 0.0'
+     |
+     |  Methods defined here:
+     |
+     |  __call__(self, *args)
+     |      Call self as a function.
+     |
+     |  __init__(self, func)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+
+    storage = class Storage(builtins.dict)
+     |  A Storage object is like a dictionary except `obj.foo` can be used
+     |  in addition to `obj['foo']`.
+     |
+     |      >>> o = storage(a=1)
+     |      >>> o.a
+     |      1
+     |      >>> o['a']
+     |      1
+     |      >>> o.a = 2
+     |      >>> o['a']
+     |      2
+     |      >>> del o.a
+     |      >>> o.a
+     |      Traceback (most recent call last):
+     |          ...
+     |      AttributeError: 'a'
+     |
+     |  Method resolution order:
+     |      Storage
+     |      builtins.dict
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __delattr__(self, key)
+     |      Implement delattr(self, name).
+     |
+     |  __getattr__(self, key)
+     |
+     |  __repr__(self)
+     |      Return repr(self).
+     |
+     |  __setattr__(self, key, value)
+     |      Implement setattr(self, name, value).
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  __weakref__
+     |      list of weak references to the object (if defined)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from builtins.dict:
+     |
+     |  __contains__(self, key, /)
+     |      True if the dictionary has the specified key, else False.
+     |
+     |  __delitem__(self, key, /)
+     |      Delete self[key].
+     |
+     |  __eq__(self, value, /)
+     |      Return self==value.
+     |
+     |  __ge__(self, value, /)
+     |      Return self>=value.
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __getitem__(...)
+     |      x.__getitem__(y) <==> x[y]
+     |
+     |  __gt__(self, value, /)
+     |      Return self>value.
+     |
+     |  __init__(self, /, *args, **kwargs)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __iter__(self, /)
+     |      Implement iter(self).
+     |
+     |  __le__(self, value, /)
+     |      Return self<=value.
+     |
+     |  __len__(self, /)
+     |      Return len(self).
+     |
+     |  __lt__(self, value, /)
+     |      Return self<value.
+     |
+     |  __ne__(self, value, /)
+     |      Return self!=value.
+     |
+     |  __reversed__(self, /)
+     |      Return a reverse iterator over the dict keys.
+     |
+     |  __setitem__(self, key, value, /)
+     |      Set self[key] to value.
+     |
+     |  __sizeof__(...)
+     |      D.__sizeof__() -> size of D in memory, in bytes
+     |
+     |  clear(...)
+     |      D.clear() -> None.  Remove all items from D.
+     |
+     |  copy(...)
+     |      D.copy() -> a shallow copy of D
+     |
+     |  get(self, key, default=None, /)
+     |      Return the value for key if key is in the dictionary, else default.
+     |
+     |  items(...)
+     |      D.items() -> a set-like object providing a view on D's items
+     |
+     |  keys(...)
+     |      D.keys() -> a set-like object providing a view on D's keys
+     |
+     |  pop(...)
+     |      D.pop(k[,d]) -> v, remove specified key and return the corresponding value.
+     |      If key is not found, d is returned if given, otherwise KeyError is raised
+     |
+     |  popitem(self, /)
+     |      Remove and return a (key, value) pair as a 2-tuple.
+     |
+     |      Pairs are returned in LIFO (last-in, first-out) order.
+     |      Raises KeyError if the dict is empty.
+     |
+     |  setdefault(self, key, default=None, /)
+     |      Insert key with a value of default if key is not in the dictionary.
+     |
+     |      Return the value for key if key is in the dictionary, else default.
+     |
+     |  update(...)
+     |      D.update([E, ]**F) -> None.  Update D from dict/iterable E and F.
+     |      If E is present and has a .keys() method, then does:  for k in E: D[k] = E[k]
+     |      If E is present and lacks a .keys() method, then does:  for k, v in E: D[k] = v
+     |      In either case, this is followed by: for k in F:  D[k] = F[k]
+     |
+     |  values(...)
+     |      D.values() -> an object providing a view on D's values
+     |
+     |  ----------------------------------------------------------------------
+     |  Class methods inherited from builtins.dict:
+     |
+     |  fromkeys(iterable, value=None, /) from builtins.type
+     |      Create a new dictionary with keys from iterable and values set to value.
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from builtins.dict:
+     |
+     |  __new__(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data and other attributes inherited from builtins.dict:
+     |
+     |  __hash__ = None
+
+    threadeddict = class ThreadedDict(_thread._local)
+     |  Thread local storage.
+     |
+     |      >>> d = ThreadedDict()
+     |      >>> d.x = 1
+     |      >>> d.x
+     |      1
+     |      >>> import threading
+     |      >>> def f(): d.x = 2
+     |      ...
+     |      >>> t = threading.Thread(target=f)
+     |      >>> t.start()
+     |      >>> t.join()
+     |      >>> d.x
+     |      1
+     |
+     |  Method resolution order:
+     |      ThreadedDict
+     |      _thread._local
+     |      builtins.object
+     |
+     |  Methods defined here:
+     |
+     |  __contains__(self, key)
+     |
+     |  __del__(self)
+     |
+     |  __delitem__(self, key)
+     |
+     |  __getitem__(self, key)
+     |
+     |  __hash__(self)
+     |      Return hash(self).
+     |
+     |  __init__(self)
+     |      Initialize self.  See help(type(self)) for accurate signature.
+     |
+     |  __repr__(self)
+     |      Return repr(self).
+     |
+     |  __setitem__(self, key, value)
+     |
+     |  __str__ = __repr__(self)
+     |
+     |  clear(self)
+     |
+     |  copy(self)
+     |
+     |  get(self, key, default=None)
+     |
+     |  has_key = __contains__(self, key)
+     |
+     |  items(self)
+     |
+     |  iter = iterkeys(self)
+     |
+     |  iteritems(self)
+     |
+     |  iterkeys(self)
+     |
+     |  itervalues(self)
+     |
+     |  keys(self)
+     |
+     |  pop(self, key, *args)
+     |
+     |  popitem(self)
+     |
+     |  setdefault(self, key, default=None)
+     |
+     |  update(self, *args, **kwargs)
+     |
+     |  values(self)
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods defined here:
+     |
+     |  clear_all()
+     |      Clears all ThreadedDict instances.
+     |
+     |  ----------------------------------------------------------------------
+     |  Data descriptors defined here:
+     |
+     |  __dict__
+     |      dictionary for instance variables (if defined)
+     |
+     |  ----------------------------------------------------------------------
+     |  Methods inherited from _thread._local:
+     |
+     |  __delattr__(self, name, /)
+     |      Implement delattr(self, name).
+     |
+     |  __getattribute__(self, name, /)
+     |      Return getattr(self, name).
+     |
+     |  __setattr__(self, name, value, /)
+     |      Implement setattr(self, name, value).
+     |
+     |  ----------------------------------------------------------------------
+     |  Static methods inherited from _thread._local:
+     |
+     |  __new__(*args, **kwargs) from builtins.type
+     |      Create and return a new object.  See help(type) for accurate signature.
+FUNCTIONS
+    autoassign(self, locals)
+        Automatically assigns local variables to `self`.
+
+            >>> self = storage()
+            >>> autoassign(self, dict(a=1, b=2))
+            >>> self.a
+            1
+            >>> self.b
+            2
+
+        Generally used in `__init__` methods, as in:
+
+            def __init__(self, foo, bar, baz=1): autoassign(self, locals())
+
+    commify(n)
+        Add commas to an integer `n`.
+
+            >>> commify(1)
+            '1'
+            >>> commify(123)
+            '123'
+            >>> commify(-123)
+            '-123'
+            >>> commify(1234)
+            '1,234'
+            >>> commify(1234567890)
+            '1,234,567,890'
+            >>> commify(123.0)
+            '123.0'
+            >>> commify(1234.5)
+            '1,234.5'
+            >>> commify(1234.56789)
+            '1,234.56789'
+            >>> commify(' %.2f ' % -1234.5)
+            '-1,234.50'
+            >>> commify(None)
+            >>>
+
+    cond(predicate, consequence, alternative=None)
+        Function replacement for if-else to use in expressions.
+
+            >>> x = 2
+            >>> cond(x % 2 == 0, "even", "odd")
+            'even'
+            >>> cond(x % 2 == 0, "even", "odd") + '_row'
+            'even_row'
+
+    dateify(datestring)
+        Formats a numified `datestring` properly.
+
+    datestr(then, now=None)
+        Converts a (UTC) datetime object to a nice string representation.
+
+            >>> from datetime import datetime, timedelta
+            >>> d = datetime(1970, 5, 1)
+            >>> datestr(d, now=d)
+            '0 microseconds ago'
+            >>> for t, v in iteritems({
+            ...   timedelta(microseconds=1): '1 microsecond ago',
+            ...   timedelta(microseconds=2): '2 microseconds ago',
+            ...   -timedelta(microseconds=1): '1 microsecond from now',
+            ...   -timedelta(microseconds=2): '2 microseconds from now',
+            ...   timedelta(microseconds=2000): '2 milliseconds ago',
+            ...   timedelta(seconds=2): '2 seconds ago',
+            ...   timedelta(seconds=2*60): '2 minutes ago',
+            ...   timedelta(seconds=2*60*60): '2 hours ago',
+            ...   timedelta(days=2): '2 days ago',
+            ... }):
+            ...     assert datestr(d, now=d+t) == v
+            >>> datestr(datetime(1970, 1, 1), now=d)
+            'January  1'
+            >>> datestr(datetime(1969, 1, 1), now=d)
+            'January  1, 1969'
+            >>> datestr(datetime(1970, 6, 1), now=d)
+            'June  1, 1970'
+            >>> datestr(None)
+            ''
+
+    denumify(string, pattern)
+        Formats `string` according to `pattern`, where the letter X gets replaced
+        by characters from `string`.
+
+            >>> denumify("8005551212", "(XXX) XXX-XXXX")
+            '(800) 555-1212'
+
+    dictadd(*dicts)
+        Returns a dictionary consisting of the keys in the argument dictionaries.
+        If they share a key, the value from the last argument is used.
+
+            >>> dictadd({1: 0, 2: 0}, {2: 1, 3: 1})
+            {1: 0, 2: 1, 3: 1}
+
+    dictfind(dictionary, element)
+        Returns a key whose value in `dictionary` is `element`
+        or, if none exists, None.
+
+            >>> d = {1:2, 3:4}
+            >>> dictfind(d, 4)
+            3
+            >>> dictfind(d, 5)
+
+    dictfindall(dictionary, element)
+        Returns the keys whose values in `dictionary` are `element`
+        or, if none exists, [].
+
+            >>> d = {1:4, 3:4}
+            >>> dictfindall(d, 4)
+            [1, 3]
+            >>> dictfindall(d, 5)
+            []
+
+    dictincr(dictionary, element)
+        Increments `element` in `dictionary`,
+        setting it to one if it doesn't exist.
+
+            >>> d = {1:2, 3:4}
+            >>> dictincr(d, 1)
+            3
+            >>> d[1]
+            3
+            >>> dictincr(d, 5)
+            1
+            >>> d[5]
+            1
+
+    dictreverse(mapping)
+        Returns a new dictionary with keys and values swapped.
+
+            >>> dictreverse({1: 2, 3: 4})
+            {2: 1, 4: 3}
+
+    group(seq, size)
+        Returns an iterator over a series of lists of length size from iterable.
+
+            >>> list(group([1,2,3,4], 2))
+            [[1, 2], [3, 4]]
+            >>> list(group([1,2,3,4,5], 2))
+            [[1, 2], [3, 4], [5]]
+
+    intget(integer, default=None)
+        Returns `integer` as an int or `default` if it can't.
+
+            >>> intget('3')
+            3
+            >>> intget('3a')
+            >>> intget('3a', 0)
+            0
+
+    iterview(x)
+        Takes an iterable `x` and returns an iterator over it
+        which prints its progress to stderr as it iterates through.
+
+    listget(lst, ind, default=None)
+        Returns `lst[ind]` if it exists, `default` otherwise.
+
+            >>> listget(['a'], 0)
+            'a'
+            >>> listget(['a'], 1)
+            >>> listget(['a'], 1, 'b')
+            'b'
+
+    lstrips(text, remove)
+        removes the string `remove` from the left of `text`
+
+            >>> lstrips("foobar", "foo")
+            'bar'
+            >>> lstrips('http://foo.org/', ['http://', 'https://'])
+            'foo.org/'
+            >>> lstrips('FOOBARBAZ', ['FOO', 'BAR'])
+            'BAZ'
+            >>> lstrips('FOOBARBAZ', ['BAR', 'FOO'])
+            'BARBAZ'
+
+    nthstr(n)
+        Formats an ordinal.
+        Doesn't handle negative numbers.
+
+            >>> nthstr(1)
+            '1st'
+            >>> nthstr(0)
+            '0th'
+            >>> [nthstr(x) for x in [2, 3, 4, 5, 10, 11, 12, 13, 14, 15]]
+            ['2nd', '3rd', '4th', '5th', '10th', '11th', '12th', '13th', '14th', '15th']
+            >>> [nthstr(x) for x in [91, 92, 93, 94, 99, 100, 101, 102]]
+            ['91st', '92nd', '93rd', '94th', '99th', '100th', '101st', '102nd']
+            >>> [nthstr(x) for x in [111, 112, 113, 114, 115]]
+            ['111th', '112th', '113th', '114th', '115th']
+
+    numify(string)
+        Removes all non-digit characters from `string`.
+
+            >>> numify('800-555-1212')
+            '8005551212'
+            >>> numify('800.555.1212')
+            '8005551212'
+
+    re_subm(pat, repl, string)
+        Like re.sub, but returns the replacement _and_ the match object.
+
+            >>> t, m = re_subm('g(oo+)fball', r'f\1lish', 'goooooofball')
+            >>> t
+            'foooooolish'
+            >>> m.groups()
+            ('oooooo',)
+
+    requeue(queue, index=-1)
+        Returns the element at index after moving it to the beginning of the queue.
+
+        >>> x = [1, 2, 3, 4]
+        >>> requeue(x)
+        4
+        >>> x
+        [4, 1, 2, 3]
+
+    restack(stack, index=0)
+        Returns the element at index after moving it to the top of stack.
+
+        >>> x = [1, 2, 3, 4]
+        >>> restack(x)
+        1
+        >>> x
+        [2, 3, 4, 1]
+
+    rstrips(text, remove)
+        removes the string `remove` from the right of `text`
+
+            >>> rstrips("foobar", "bar")
+            'foo'
+
+    safeiter(it, cleanup=None, ignore_errors=True)
+        Makes an iterator safe by ignoring the exceptions occurred during the iteration.
+
+    safestr(obj, encoding='utf-8')
+        Converts any given object to utf-8 encoded string.
+
+            >>> safestr('hello')
+            'hello'
+            >>> safestr(2)
+            '2'
+
+    safeunicode = safestr(obj, encoding='utf-8')
+        Converts any given object to utf-8 encoded string.
+
+            >>> safestr('hello')
+            'hello'
+            >>> safestr(2)
+            '2'
+
+    safewrite(filename, content)
+        Writes the content to a temp file and then moves the temp file to
+        given filename to avoid overwriting the existing file in case of errors.
+
+    sendmail(from_address, to_address, subject, message, headers=None, **kw)
+        Sends the email message `message` with mail and envelope headers
+        for from `from_address_` to `to_address` with `subject`.
+        Additional email headers can be specified with the dictionary
+        `headers.
+
+        Optionally cc, bcc and attachments can be specified as keyword arguments.
+        Attachments must be an iterable and each attachment can be either a
+        filename or a file object or a dictionary with filename, content and
+        optionally content_type keys.
+
+        If `web.config.smtp_server` is set, it will send the message
+        to that SMTP server. Otherwise it will look for
+        `/usr/sbin/sendmail`, the typical location for the sendmail-style
+        binary. To use sendmail from a different path, set `web.config.sendmail_path`.
+
+    storify(mapping, *requireds, **defaults)
+        Creates a `storage` object from dictionary `mapping`, raising `KeyError` if
+        d doesn't have all of the keys in `requireds` and using the default
+        values for keys found in `defaults`.
+
+        For example, `storify({'a':1, 'c':3}, b=2, c=0)` will return the equivalent of
+        `storage({'a':1, 'b':2, 'c':3})`.
+
+        If a `storify` value is a list (e.g. multiple values in a form submission),
+        `storify` returns the last element of the list, unless the key appears in
+        `defaults` as a list. Thus:
+
+            >>> storify({'a':[1, 2]}).a
+            2
+            >>> storify({'a':[1, 2]}, a=[]).a
+            [1, 2]
+            >>> storify({'a':1}, a=[]).a
+            [1]
+            >>> storify({}, a=[]).a
+            []
+
+        Similarly, if the value has a `value` attribute, `storify will return _its_
+        value, unless the key appears in `defaults` as a dictionary.
+
+            >>> storify({'a':storage(value=1)}).a
+            1
+            >>> storify({'a':storage(value=1)}, a={}).a
+            <Storage {'value': 1}>
+            >>> storify({}, a={}).a
+            {}
+
+    strips(text, remove)
+        removes the string `remove` from the both sides of `text`
+
+            >>> strips("foobarfoo", "foo")
+            'bar'
+
+    timelimit(timeout)
+        A decorator to limit a function to `timeout` seconds, raising `TimeoutError`
+        if it takes longer.
+
+            >>> import time
+            >>> def meaningoflife():
+            ...     time.sleep(.2)
+            ...     return 42
+            >>>
+            >>> timelimit(.1)(meaningoflife)()
+            Traceback (most recent call last):
+                ...
+            RuntimeError: took too long
+            >>> timelimit(1)(meaningoflife)()
+            42
+
+        _Caveat:_ The function isn't stopped after `timeout` seconds but continues
+        executing in a separate thread. (There seems to be no way to kill a thread.)
+
+        inspired by <http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/473878>
+
+    to36(q)
+        Converts an integer to base 36 (a useful scheme for human-sayable IDs).
+
+            >>> to36(35)
+            'z'
+            >>> to36(119292)
+            '2k1o'
+            >>> int(to36(939387374), 36)
+            939387374
+            >>> to36(0)
+            '0'
+            >>> to36(-393)
+            Traceback (most recent call last):
+                ...
+            ValueError: must supply a positive integer
+
+    tryall(context, prefix=None)
+        Tries a series of functions and prints their results.
+        `context` is a dictionary mapping names to values;
+        the value will only be tried if it's callable.
+
+            >>> tryall(dict(j=lambda: True))
+            j: True
+            ----------------------------------------
+            results:
+               True: 1
+
+        For example, you might have a file `test/stuff.py`
+        with a series of functions testing various things in it.
+        At the bottom, have a line:
+
+            if __name__ == "__main__": tryall(globals())
+
+        Then you can run `python test/stuff.py` and get the results of
+        all the tests.
+
+    uniq(seq, key=None)
+        Removes duplicate elements from a list while preserving the order of the rest.
+
+            >>> uniq([9,0,2,1,0])
+            [9, 0, 2, 1]
+
+        The value of the optional `key` parameter should be a function that
+        takes a single argument and returns a key to test the uniqueness.
+
+            >>> uniq(["Foo", "foo", "bar"], key=lambda s: s.lower())
+            ['Foo', 'bar']
+DATA
+    __all__ = ['Storage', 'storage', 'storify', 'Counter', 'counter', 'ite...
+    iters = (<class 'list'>, <class 'tuple'>, <class 'set'>, <class 'froze...
+    re_compile = <web.utils.Memoize object>
+FILE
+    /usr/lib/python3.8/site-packages/web/utils.py
+
+
+https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&eventid=nn00727575
+
+<a href="#" target="_blank" rel="noopener noreferrer">Link</a>
+
+
+newDict = \
+	{
+		"mag": "2.5,
+		"place": ""46km WNW of Tonopah, Nevada",
+		"time": "1589591771990,
+		"updated": "1589592053405,
+		"tz": "-480,
+		"url": ""https://earthquake.usgs.gov/earthquakes/eventpage/nn00725870",
+		"detail": ""https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725870.geojson",
+		"felt": "null,
+		"cdi": "null,
+		"mmi": "null,
+		"alert": "null,
+		"status": ""automatic",
+		"tsunami": "0,
+		"sig": "96,
+		"net": ""nn",
+		"code": ""00725870",
+		"ids": "",nn00725870,",
+		"sources": "",nn,",
+		"types": "",geoserve,origin,phase-data,",
+		"nst": "12,
+		"dmin": "0.367,
+		"rms": "0.16,
+		"gap": "166.8,
+		"magType": ""ml",
+		"type": ""earthquake",
+		"title": ""M 2.5 -
+		api: "varchar",
+		CEQID: "int",
+		CKMFROM: "decimal",
+		coordinates: "list",
+		count: "int",
+		CRID: "int",
+		DEPTHERROR: "decimal",
+		"detail": "varchar",
+		DMIN: "decimal",
+		EQID: "varchar",
+		EVENTDEPTH: "decimal",
+		eventID: "varchar",
+		EVENTSTATUS: "varchar",
+		EVENTTYPE: "varchar",
+		featureType: "varchar",
+		fileApiVersion: "varchar",
+		fileBBoxMaxDepth: "decimal",
+		fileBBoxMaxLat: "decimal",
+		fileBBoxMaxLon: "decimal",
+		fileBBoxMinDepth: "decimal",
+		fileBBoxMinLat: "decimal",
+		fileBBoxMinLon: "decimal",
+		fileEntryRID: "int",
+		fileMetaGeneratedTime: "datetime",
+		fileRecordCount: "int",
+		fileStatus: "int",
+		fileTitle: "varchar",
+		fileType: "varchar",
+		fileUrl: "varchar",
+		GAP: "decimal",
+		generated: "datetime",
+		geoDepth: "decimal",
+		geoLat: "decimal",
+		geoLon: "decimal",
+		geometry: "dict",
+		geoType: "varchar",
+		HORIZONTALERROR: "decimal",
+		idz: "varchar",
+		ISLOADED: "int",
+		KMFROM: "decimal",
+		KMFROMHM: "decimal",
+		LATITUDE: "decimal",
+		LOCATIONSOURCE: "varchar",
+		LONGITUDE: "decimal",
+		MAGNITUDE: "decimal",
+		MAGNITUDEERROR: "decimal",
+		MAGNITUDESOURCE: "varchar",
+		MAGNITUDETYPE: "varchar",
+		MAGNST: "int",
+		NETWORK: "varchar",
+		NST: "int",
+		NUMROWS: "int",
+		OFPGS: "int",
+		PGNUM: "int",
+		PLACE: "varchar",
+		propAlert: "int",
+		propCode: "varchar",
+		propCompDYFIIndex: "decimal",
+		propDegMinToStation: "decimal",
+		propDetailUrl: "varchar",
+		properties: "dict",
+		propEventType: "varchar",
+		propFelt: "int",
+		propIDsUsed: "varchar",
+		propMag: "decimal",
+		propMagType: "varchar",
+		propMaxAzmGap: "decimal",
+		propMaxMeasuredIntensity: "decimal",
+		propNetwork: "varchar",
+		propNumStations: "int",
+		propPlace: "varchar",
+		propProductTypesUsed: "varchar",
+		propRMS: "decimal",
+		propSignificanceIndex: "int,",
+		propSourcesUsed: "varchar",
+		propStatus: "varchar",
+		propTimeZ: "datetime",
+		propTitle: "varchar",
+		propTsunami: "int",
+		propTZLM: "int",
+		propUpdatedZ: "datetime",
+		propUrl: "varchar",
+		QUERIESINRETURNTO: "varchar",
+		QUERIESINTITLE: "varchar",
+		QUERYNUM: "int",
+		REGION0DESCRIPTION: "varchar",
+		REGION0EAST: "decimal",
+		REGION0KMFROM: "decimal",
+		REGION0NAME: "varchar",
+		REGION0NORTH: "decimal",
+		REGION0SOUTH: "decimal",
+		REGION0WEST: "decimal",
+		REGION1DESCRIPTION: "varchar",
+		REGION1EAST: "decimal",
+		REGION1KMFROM: "decimal",
+		REGION1NAME: "varchar",
+		REGION1NORTH: "decimal",
+		REGION1SOUTH: "decimal",
+		REGION1WEST: "decimal",
+		REGION2DESCRIPTION: "varchar",
+		REGION2EAST: "decimal",
+		REGION2KMFROM: "decimal",
+		REGION2NAME: "varchar",
+		REGION2NORTH: "decimal",
+		REGION2SOUTH: "decimal",
+		REGION2WEST: "decimal",
+		REGION3DESCRIPTION: "varchar",
+		REGION3EAST: "decimal",
+		REGION3KMFROM: "decimal",
+		REGION3NAME: "varchar",
+		REGION3NORTH: "decimal",
+		REGION3SOUTH: "decimal",
+		REGION3WEST: "decimal",
+		RID: "int",
+		RMS: "decimal",
+		ROWNUM: "int",
+		SINCETIMEL: "datetime",
+		SINCETIMEZ: "datetime",
+		SINCEUPDATEDL: "datetime",
+		SINCEUPDATEDZ: "datetime",
+		SQLGROUPBY: "varchar",
+		SQLHAVING: "varchar",
+		SQLLIMIT: "varchar",
+		SQLORDERBY: "varchar",
+		SQLSELECT: "varchar",
+		SQLWHERE: "varchar",
+		STARTRECNUM: "int",
+		status: "varchar",
+		TIMEL: "datetime",
+		TIMEZ: "datetime",
+		title: "varchar",
+		typez: "varchar",
+		UPDATEDL: "datetime",
+		UPDATEDZ: "datetime",
+		url: "varchar",
+	}
+
+INSERT INTO geoJsonEvents
+(
+	RID,
+	eventID,
+	propPlace,
+	fileEntryRID,
+	geoType,
+	geoLon,
+	geoLat,
+	geoDepth,
+	featureType,
+	propMag,
+	propTimeZ,
+	propUpdatedZ,
+	propTZLM,
+	propUrl,
+	propDetailUrl,
+	propFelt,
+	propCompDYFIIndex,
+	propMaxMeasuredIntensity,
+	propAlert,
+	propStatus,
+	propTsunami,
+	propSignificanceIndex,
+	,
+	propNetwork,
+	propCode,
+	propIDsUsed,
+	propSourcesUsed,
+	propProductTypesUsed,
+	propNumStations,
+	propDegMinToStation,
+	propRMS,
+	propMaxAzmGap,
+	propMagType,
+	propEventType,
+	propTitle
+) VALUES (
+	0,
+	"nn00725870",
+	"",
+	11, "Point", -117.739, 38.1987, 1.6, "Feature", 2.5, "2020-05-15 19:16:11", "2020-05-15 19:20:53", -480, "https://earthquake.usgs.gov/earthquakes/eventpage/nn00725870", "https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725870.geojson", 0, 0, 0, 0, "automatic", 0, 96, "nn", "00725870", ",nn00725870,", ",nn,", ",geoserve,origin,phase-data,", 12, 0.367, 0.16, 166.8, "ml", "earthquake", "M 2.5 - 46km WNW of Tonopah, Nevada")
+
+
+ff0000
+ff0099
+ff00ff
+9900ff
+0000ff
+0099ff
+00ffff
+00ff99
+00ff00
+99ff00
+ffff00
+ff9900
+
+
+METADATAEMPTY = \
+	{
+		generated: metaGeneratedTime,
+		url: metaURL,
+		title: metaFileTitle,
+		status: metaFileStatus,
+		api: metaAPI,
+		limit: metaLimit,
+		offset: metaOffset,
+		count: metaRecordCount,
+		'RID': 0,
+		'fileType':
+			'FeatureCollection',
+		'metaGeneratedTime'
+		'metaURL'
+		'metaFileTitle'
+		'metaFileStatus'
+		'fileApiVersion'
+		'metaRecordCount'
+		'BBoxMinLon'
+		'BBoxMinLat'
+		'BBoxMinDepth'
+		'BBoxMaxLon'
+		'BBoxMaxLat'
+		'BBoxMaxDepth'
+{
+	'RID': 0,
+	'fileType':
+	'FeatureCollection',
+	'metaGeneratedTime'
+	'metaURL'
+	'metaFileTitle'
+	'metaFileStatus'
+	'fileApiVersion'
+	'metaRecordCount'
+	'BBoxMinLon'
+	'BBoxMinLat'
+	'BBoxMinDepth'
+	'BBoxMaxLon'
+	'BBoxMaxLat'
+	'BBoxMaxDepth'
+
+
+ff0000
+ff0066
+ff0099
+ff00cc
+ff00ff
+cc00ff
+9900ff
+6600ff
+0000ff

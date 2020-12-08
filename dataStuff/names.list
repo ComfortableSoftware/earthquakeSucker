@@ -1,0 +1,267 @@
+BBoxMaxDepth = "BBoxMaxDepth" : ""
+BBoxMaxLat = "BBoxMaxLat" : ""
+BBoxMaxLon = "BBoxMaxLon" : ""
+BBoxMinDepth = "BBoxMinDepth" : ""
+BBoxMinLat = "BBoxMinLat" : ""
+BBoxMinLon = "BBoxMinLon" : ""
+CEQID = "CEQID" : ""
+CKMFROM = "CKMFROM" : ""
+coordinates = "coordinates" : ""
+count = "count" : ""
+CRID = "CRID" : ""
+detail = "detail" : ""
+eventID = "eventID" : ""
+Features = "Features" : ""
+featureType = "featureType" : ""
+fileApiVersion = "fileApiVersion" : ""
+fileEntryRID = "fileEntryRID" : ""
+fileType = "fileType" : ""
+generated = "generated" : ""
+geoDepth = "geoDepth" : ""
+geoKMFrom = "geoKMFrom" : ""
+geoKMFROMHM = "geoKMFROMHM" : ""
+geoLat = "geoLat" : ""
+geoLon = "geoLon" : ""
+geometry = "geometry" : ""
+geoType = "geoType" : ""
+idz = "id" : ""
+ISLOADED = "ISLOADED" : ""
+metaAPI = "metaAPI" : ""
+metaFileStatus = "metaFileStatus" : ""
+metaFileTitle = "metaFileTitle" : ""
+metaGeneratedTime = "metaGeneratedTime" : ""
+metaRecordCount = "metaRecordCount" : ""
+metaURL = "metaURL" : ""
+NUMROWS = "NUMROWS" : ""
+OFPGS = "OFPGS" : ""
+PGNUM = "PGNUM" : ""
+propAlert = "propAlert" : ""
+propCode = "propCode" : ""
+propCompDYFIIndex = "propCompDYFIIndex" : ""
+propDegMinToStation = "propDegMinToStation" : ""
+propDepthErr = "propDepthErr" : ""
+propDetailUrl = "propDetailUrl" : ""
+properties = "properties" : ""
+propEventType = "propEventType" : ""
+propFelt = "propFelt" : ""
+propHorizontalErr = "propHorizontalErr" : ""
+propIDsUsed = "propIDsUsed" : ""
+propLocationSrc = "propLocationSrc" : ""
+propMag = "propMag" : ""
+propMagErr = "propMagErr" : ""
+propMagNST = "propMagNST" : ""
+propMagSrc = "propMagSrc" : ""
+propMagType = "propMagType" : ""
+propMaxAzmGap = "propMaxAzmGap" : ""
+propMaxMeasuredIntensity = "propMaxMeasuredIntensity" : ""
+propNetwork = "propNetwork" : ""
+propNumStations = "propNumStations" : ""
+propPlace = "propPlace" : ""
+propProductTypesUsed = "propProductTypesUsed" : ""
+propRMS = "propRMS" : ""
+propSignificanceIndex = "propSignificanceIndex" : ""
+propSourcesUsed = "propSourcesUsed" : ""
+propStatus = "propStatus" : ""
+propTimeL = "propTimeL" : ""
+propTimeZ = "propTimeZ" : ""
+propTitle = "propTitle" : ""
+propTsunami = "propTsunami" : ""
+propTZLM = "propTZLM" : ""
+propUpdatedL = "propUpdatedL" : ""
+propUpdatedZ = "propUpdatedZ" : ""
+propUrl = "propUrl" : ""
+QUERIESINRETURNTO = "QUERIESINRETURNTO" : ""
+QUERIESINTITLE = "QUERIESINTITLE" : ""
+QUERYNUM = "QUERYNUM" : ""
+REGION0DESCRIPTION = "REGION0DESCRIPTION" : ""
+REGION0EAST = "REGION0EAST" : ""
+REGION0KMFROM = "REGION0KMFROM" : ""
+REGION0NAME = "REGION0NAME" : ""
+REGION0NORTH = "REGION0NORTH" : ""
+REGION0SOUTH = "REGION0SOUTH" : ""
+REGION0WEST = "REGION0WEST" : ""
+REGION1DESCRIPTION = "REGION1DESCRIPTION" : ""
+REGION1EAST = "REGION1EAST" : ""
+REGION1KMFROM = "REGION0KMFROM" : ""
+REGION1NAME = "REGION1NAME" : ""
+REGION1NORTH = "REGION1NORTH" : ""
+REGION1SOUTH = "REGION1SOUTH" : ""
+REGION1WEST = "REGION1WEST" : ""
+REGION2DESCRIPTION = "REGION2DESCRIPTION" : ""
+REGION2EAST = "REGION2EAST" : ""
+REGION2KMFROM = "REGION2KMFROM" : ""
+REGION2NAME = "REGION2NAME" : ""
+REGION2NORTH = "REGION2NORTH" : ""
+REGION2SOUTH = "REGION2SOUTH" : ""
+REGION2WEST = "REGION2WEST" : ""
+REGION3DESCRIPTION = "REGION3DESCRIPTION" : ""
+REGION3EAST = "REGION3EAST" : ""
+REGION3KMFROM = "REGION3KMFROM" : ""
+REGION3NAME = "REGION3NAME" : ""
+REGION3NORTH = "REGION3NORTH" : ""
+REGION3SOUTH = "REGION3SOUTH" : ""
+REGION3WEST = "REGION3WEST" : ""
+RID = "RID" : ""
+ROWNUM = "ROWNUM" : ""
+sincePropTimeL = "sincePropTimeL" : ""
+sincePropTimeZ = "sincePropTimeZ" : ""
+sincePropUpdatedL = "sincePropUpdatedL" : ""
+sincePropUpdatedZ = "sincePropUpdatedZ" : ""
+SQLGROUPBY = "SQLGROUPBY" : ""
+SQLHAVING = "SQLHAVING" : ""
+SQLLIMIT = "SQLLIMIT" : ""
+SQLORDERBY = "SQLORDERBY" : ""
+SQLSELECT = "SQLSELECT" : ""
+SQLWHERE = "SQLWHERE" : ""
+STARTRECNUM = "STARTRECNUM" : ""
+status = "status" : ""
+title = "title" : ""
+typez = "type" : ""
+url = "url" : ""
+"alert": "varchar",
+"cdi": "int",
+"code": "varchar",
+"detail": "varchar",
+"dmin": "decimal",
+"felt": "int",
+"gap": "decimal",
+"ids": "varchar",
+"mag": "decimal",
+"magType": "varchar",
+"mmi": "decimal",
+"net": "varchar",
+"nst": "int",
+"place": "varchar",
+"propNumStations": "int",
+"rms": "decimal",
+"sig": "int",
+"sources": "varchar",
+"status": "varchar",
+"time": "int",
+"title": "varchar",
+"tsunami": "int",
+"type": "varchar",
+"types": "varchar",
+"tz": "int",
+"updated": "int",
+"url": "varchar",
+BBoxMaxDepth: "decimal",
+BBoxMaxLat: "decimal",
+BBoxMaxLon: "decimal",
+BBoxMinDepth: "decimal",
+BBoxMinLat: "decimal",
+BBoxMinLon: "decimal",
+CEQID: "int",
+CKMFROM: "decimal",
+coordinates: "list",
+count: "int",
+CRID: "int",
+detail: "varchar",
+eventID: "varchar",
+Features: "list",
+featureType: "varchar",
+fileApiVersion: "varchar",
+fileEntryRID: "int",
+fileType: "varchar",
+generated: "datetime",
+geoDepth: "decimal",
+geoKMFrom: "decimal",
+geoKMFROMHM: "decimal",
+geoLat: "decimal",
+geoLon: "decimal",
+geometry: "dict",
+geoType: "varchar",
+idz: "varchar",
+ISLOADED: "int",
+metaAPI: "varchar",
+metaFileStatus: "int",
+metaFileTitle: "varchar",
+metaGeneratedTime: "datetime",
+metaRecordCount: "int",
+metaURL: "varchar",
+NUMROWS: "int",
+OFPGS: "int",
+PGNUM: "int",
+propAlert: "varchar",
+propCode: "varchar",
+propCompDYFIIndex: "decimal",
+propDegMinToStation: "decimal",
+propDepthErr: "decimal",
+propDetailUrl: "varchar",
+properties: "dict",
+propEventType: "varchar",
+propFelt: "int",
+propHorizontalErr: "decimal",
+propIDsUsed: "varchar",
+propLocationSrc: "varchar",
+propMag: "decimal",
+propMagErr: "decimal",
+propMagNST: "int",
+propMagSrc: "varchar",
+propMagType: "varchar",
+propMaxAzmGap: "decimal",
+propMaxMeasuredIntensity: "decimal",
+propNetwork: "varchar",
+propNumStations: "int",
+propPlace: "varchar",
+propProductTypesUsed: "varchar",
+propRMS: "decimal",
+propSignificanceIndex: "int,",
+propSourcesUsed: "varchar",
+propStatus: "varchar",
+propTimeL: "datetime",
+propTimeZ: "datetime",
+propTitle: "varchar",
+propTsunami: "int",
+propTZLM: "int",
+propUpdatedL: "datetime",
+propUpdatedZ: "datetime",
+propUrl: "varchar",
+QUERIESINRETURNTO: "varchar",
+QUERIESINTITLE: "varchar",
+QUERYNUM: "int",
+REGION0DESCRIPTION: "varchar",
+REGION0EAST: "decimal",
+REGION0KMFROM: "decimal",
+REGION0NAME: "varchar",
+REGION0NORTH: "decimal",
+REGION0SOUTH: "decimal",
+REGION0WEST: "decimal",
+REGION1DESCRIPTION: "varchar",
+REGION1EAST: "decimal",
+REGION1KMFROM: "decimal",
+REGION1NAME: "varchar",
+REGION1NORTH: "decimal",
+REGION1SOUTH: "decimal",
+REGION1WEST: "decimal",
+REGION2DESCRIPTION: "varchar",
+REGION2EAST: "decimal",
+REGION2KMFROM: "decimal",
+REGION2NAME: "varchar",
+REGION2NORTH: "decimal",
+REGION2SOUTH: "decimal",
+REGION2WEST: "decimal",
+REGION3DESCRIPTION: "varchar",
+REGION3EAST: "decimal",
+REGION3KMFROM: "decimal",
+REGION3NAME: "varchar",
+REGION3NORTH: "decimal",
+REGION3SOUTH: "decimal",
+REGION3WEST: "decimal",
+RID: "int",
+ROWNUM: "int",
+sincePropTimeL: "datetime",
+sincePropTimeZ: "datetime",
+sincePropUpdatedL: "datetime",
+sincePropUpdatedZ: "datetime",
+SQLGROUPBY: "varchar",
+SQLHAVING: "varchar",
+SQLLIMIT: "varchar",
+SQLORDERBY: "varchar",
+SQLSELECT: "varchar",
+SQLWHERE: "varchar",
+STARTRECNUM: "int",
+status: "varchar",
+title: "varchar",
+typez: "varchar",
+url: "varchar",

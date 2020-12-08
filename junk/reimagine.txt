@@ -1,0 +1,866 @@
+type: -=> 
+type: FeatureCollection
+metadata: -=> 
+metadata:0 -=> 
+generated: 1589592179000
+url: https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson
+title: USGS All Earthquakes, Past Hour
+status: 200
+api: 1.8.1
+count: 21
+ <=- 000 <=- dict
+metadata:0 <=- 
+bbox: -=> 
+bbox:0 -=> 
+0: -152.3633
+1: 33.0096667
+2: 0
+3: -115.216
+4: 66.9793
+5: 94.9
+ <=- 001 <=- list
+bbox:0 <=- 
+features: -=> 
+features:0 -=> 
+ -=> 001 0: -=> 
+type: Feature
+id: nn00725870
+ -=> 001 geometry: -=> iter 
+			type: Point
+ -=> 002 coordinates: -=> iter 
+			0: -117.739
+1: 38.1987
+2: 1.6
+ <=- 004 <=- list
+ <=- 003 <=- dict
+ -=> 003 properties: -=> iter 
+			mag: 2.5
+place: 46km WNW of Tonopah, Nevada
+time: 1589591771990
+updated: 1589592053405
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/nn00725870
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725870.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 96
+net: nn
+code: 00725870
+ids: ,nn00725870,
+sources: ,nn,
+types: ,geoserve,origin,phase-data,
+nst: 12
+dmin: 0.367
+rms: 0.16
+gap: 166.8
+magType: ml
+type: earthquake
+title: M 2.5 - 46km WNW of Tonopah, Nevada
+ <=- 004 <=- dict
+ <=- 004 <=- dict
+ -=> 004 1: -=> 
+type: Feature
+id: ci39202391
+ -=> 004 geometry: -=> iter 
+			type: Point
+ -=> 005 coordinates: -=> iter 
+			0: -116.014333
+1: 33.009667
+2: 5.49
+ <=- 007 <=- list
+ <=- 006 <=- dict
+ -=> 006 properties: -=> iter 
+			mag: 1.28
+place: 18km SE of Ocotillo Wells, CA
+time: 1589591604200
+updated: 1589591826013
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/ci39202391
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ci39202391.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 25
+net: ci
+code: 39202391
+ids: ,ci39202391,
+sources: ,ci,
+types: ,geoserve,nearby-cities,origin,phase-data,scitech-link,
+nst: 22
+dmin: 0.1283
+rms: 0.23
+gap: 60
+magType: ml
+type: earthquake
+title: M 1.3 - 18km SE of Ocotillo Wells, CA
+ <=- 007 <=- dict
+ <=- 007 <=- dict
+ -=> 007 2: -=> 
+type: Feature
+id: nn00725867
+ -=> 007 geometry: -=> iter 
+			type: Point
+ -=> 008 coordinates: -=> iter 
+			0: -117.8442
+1: 38.1903
+2: 4.4
+ <=- 010 <=- list
+ <=- 009 <=- dict
+ -=> 009 properties: -=> iter 
+			mag: 3
+place: 55km WNW of Tonopah, Nevada
+time: 1589591511080
+updated: 1589592050040
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/nn00725867
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725867.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 138
+net: nn
+code: 00725867
+ids: ,nn00725867,us70009hjr,
+sources: ,nn,us,
+types: ,geoserve,origin,phase-data,
+nst: 16
+dmin: 0.341
+rms: 0.03
+gap: 102.02
+magType: ml
+type: earthquake
+title: M 3.0 - 55km WNW of Tonopah, Nevada
+ <=- 010 <=- dict
+ <=- 010 <=- dict
+ -=> 010 3: -=> 
+type: Feature
+id: nn00725864
+ -=> 010 geometry: -=> iter 
+			type: Point
+ -=> 011 coordinates: -=> iter 
+			0: -117.7527
+1: 38.1955
+2: 6.2
+ <=- 013 <=- list
+ <=- 012 <=- dict
+ -=> 012 properties: -=> iter 
+			mag: 3.3
+place: 47km WNW of Tonopah, Nevada
+time: 1589591403160
+updated: 1589591829040
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/nn00725864
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725864.geojson
+felt: None
+cdi: None
+mmi: 3.21
+alert: None
+status: automatic
+tsunami: 0
+sig: 168
+net: nn
+code: 00725864
+ids: ,nn00725864,us70009hjm,
+sources: ,nn,us,
+types: ,geoserve,origin,phase-data,shakemap,
+nst: 36
+dmin: 0.384
+rms: 0.22
+gap: 49.23
+magType: ml
+type: earthquake
+title: M 3.3 - 47km WNW of Tonopah, Nevada
+ <=- 013 <=- dict
+ <=- 013 <=- dict
+ -=> 013 4: -=> 
+type: Feature
+id: nn00725862
+ -=> 013 geometry: -=> iter 
+			type: Point
+ -=> 014 coordinates: -=> iter 
+			0: -117.7878
+1: 38.2265
+2: 0
+ <=- 016 <=- list
+ <=- 015 <=- dict
+ -=> 015 properties: -=> iter 
+			mag: 2.2
+place: 51km WNW of Tonopah, Nevada
+time: 1589591171240
+updated: 1589591412884
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/nn00725862
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725862.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 74
+net: nn
+code: 00725862
+ids: ,nn00725862,
+sources: ,nn,
+types: ,geoserve,origin,phase-data,
+nst: 18
+dmin: 0.459
+rms: 0.1
+gap: 98.7
+magType: ml
+type: earthquake
+title: M 2.2 - 51km WNW of Tonopah, Nevada
+ <=- 016 <=- dict
+ <=- 016 <=- dict
+ -=> 016 5: -=> 
+type: Feature
+id: nn00725859
+ -=> 016 geometry: -=> iter 
+			type: Point
+ -=> 017 coordinates: -=> iter 
+			0: -117.8427
+1: 38.1587
+2: 3.9
+ <=- 019 <=- list
+ <=- 018 <=- dict
+ -=> 018 properties: -=> iter 
+			mag: 2.3
+place: 54km W of Tonopah, Nevada
+time: 1589590885920
+updated: 1589591152979
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/nn00725859
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725859.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 81
+net: nn
+code: 00725859
+ids: ,nn00725859,
+sources: ,nn,
+types: ,geoserve,origin,phase-data,
+nst: 12
+dmin: 0.375
+rms: 0.04
+gap: 152.56
+magType: ml
+type: earthquake
+title: M 2.3 - 54km W of Tonopah, Nevada
+ <=- 019 <=- dict
+ <=- 019 <=- dict
+ -=> 019 6: -=> 
+type: Feature
+id: ak0206akysp3
+ -=> 019 geometry: -=> iter 
+			type: Point
+ -=> 020 coordinates: -=> iter 
+			0: -152.3633
+1: 60.6587
+2: 94.9
+ <=- 022 <=- list
+ <=- 021 <=- dict
+ -=> 021 properties: -=> iter 
+			mag: 1.3
+place: 28km NE of Redoubt Volcano, Alaska
+time: 1589590636457
+updated: 1589591750874
+tz: -540
+url: https://earthquake.usgs.gov/earthquakes/eventpage/ak0206akysp3
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ak0206akysp3.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 26
+net: ak
+code: 0206akysp3
+ids: ,ak0206akysp3,
+sources: ,ak,
+types: ,geoserve,origin,
+nst: None
+dmin: None
+rms: 0.55
+gap: None
+magType: ml
+type: earthquake
+title: M 1.3 - 28km NE of Redoubt Volcano, Alaska
+ <=- 022 <=- dict
+ <=- 022 <=- dict
+ -=> 022 7: -=> 
+type: Feature
+id: ak0206akysjy
+ -=> 022 geometry: -=> iter 
+			type: Point
+ -=> 023 coordinates: -=> iter 
+			0: -150.6103
+1: 63.7685
+2: 11.3
+ <=- 025 <=- list
+ <=- 024 <=- dict
+ -=> 024 properties: -=> iter 
+			mag: 1.3
+place: 81km W of Healy, Alaska
+time: 1589590634034
+updated: 1589591318993
+tz: -540
+url: https://earthquake.usgs.gov/earthquakes/eventpage/ak0206akysjy
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ak0206akysjy.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 26
+net: ak
+code: 0206akysjy
+ids: ,ak0206akysjy,
+sources: ,ak,
+types: ,geoserve,origin,
+nst: None
+dmin: None
+rms: 0.44
+gap: None
+magType: ml
+type: earthquake
+title: M 1.3 - 81km W of Healy, Alaska
+ <=- 025 <=- dict
+ <=- 025 <=- dict
+ -=> 025 8: -=> 
+type: Feature
+id: nn00725856
+ -=> 025 geometry: -=> iter 
+			type: Point
+ -=> 026 coordinates: -=> iter 
+			0: -118.0368
+1: 38.1577
+2: 11
+ <=- 028 <=- list
+ <=- 027 <=- dict
+ -=> 027 properties: -=> iter 
+			mag: 2.5
+place: 65km SE of Hawthorne, Nevada
+time: 1589590612140
+updated: 1589590912799
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/nn00725856
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725856.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 96
+net: nn
+code: 00725856
+ids: ,nn00725856,
+sources: ,nn,
+types: ,geoserve,origin,phase-data,
+nst: 14
+dmin: 0.354
+rms: 0.26
+gap: 121.19
+magType: ml
+type: earthquake
+title: M 2.5 - 65km SE of Hawthorne, Nevada
+ <=- 028 <=- dict
+ <=- 028 <=- dict
+ -=> 028 9: -=> 
+type: Feature
+id: nn00725854
+ -=> 028 geometry: -=> iter 
+			type: Point
+ -=> 029 coordinates: -=> iter 
+			0: -117.8808
+1: 38.2058
+2: 8.2
+ <=- 031 <=- list
+ <=- 030 <=- dict
+ -=> 030 properties: -=> iter 
+			mag: 2.3
+place: 59km WNW of Tonopah, Nevada
+time: 1589590210080
+updated: 1589590452888
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/nn00725854
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725854.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 81
+net: nn
+code: 00725854
+ids: ,nn00725854,
+sources: ,nn,
+types: ,geoserve,origin,phase-data,
+nst: 10
+dmin: 0.301
+rms: 0.11
+gap: 143.3
+magType: ml
+type: earthquake
+title: M 2.3 - 59km WNW of Tonopah, Nevada
+ <=- 031 <=- dict
+ <=- 031 <=- dict
+ -=> 031 10: -=> 
+type: Feature
+id: ci39202383
+ -=> 031 geometry: -=> iter 
+			type: Point
+ -=> 032 coordinates: -=> iter 
+			0: -117.473167
+1: 35.5315
+2: 8.56
+ <=- 034 <=- list
+ <=- 033 <=- dict
+ -=> 033 properties: -=> iter 
+			mag: 1.14
+place: 21km ESE of Ridgecrest, CA
+time: 1589589896500
+updated: 1589590114510
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/ci39202383
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ci39202383.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 20
+net: ci
+code: 39202383
+ids: ,ci39202383,
+sources: ,ci,
+types: ,geoserve,nearby-cities,origin,phase-data,scitech-link,
+nst: 13
+dmin: 0.0556
+rms: 0.16
+gap: 105
+magType: ml
+type: earthquake
+title: M 1.1 - 21km ESE of Ridgecrest, CA
+ <=- 034 <=- dict
+ <=- 034 <=- dict
+ -=> 034 11: -=> 
+type: Feature
+id: nn00725852
+ -=> 034 geometry: -=> iter 
+			type: Point
+ -=> 035 coordinates: -=> iter 
+			0: -117.9817
+1: 38.0878
+2: 12
+ <=- 037 <=- list
+ <=- 036 <=- dict
+ -=> 036 properties: -=> iter 
+			mag: 1.7
+place: 65km W of Tonopah, Nevada
+time: 1589589869820
+updated: 1589590133434
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/nn00725852
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725852.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 44
+net: nn
+code: 00725852
+ids: ,nn00725852,
+sources: ,nn,
+types: ,geoserve,origin,phase-data,
+nst: 9
+dmin: 0.925
+rms: 0.12
+gap: 175.66
+magType: ml
+type: earthquake
+title: M 1.7 - 65km W of Tonopah, Nevada
+ <=- 037 <=- dict
+ <=- 037 <=- dict
+ -=> 037 12: -=> 
+type: Feature
+id: nn00725850
+ -=> 037 geometry: -=> iter 
+			type: Point
+ -=> 038 coordinates: -=> iter 
+			0: -117.4522
+1: 38.4087
+2: 0.7
+ <=- 040 <=- list
+ <=- 039 <=- dict
+ -=> 039 properties: -=> iter 
+			mag: 2.4
+place: 42km NNW of Tonopah, Nevada
+time: 1589589742870
+updated: 1589590027751
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/nn00725850
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725850.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 89
+net: nn
+code: 00725850
+ids: ,nn00725850,
+sources: ,nn,
+types: ,geoserve,origin,phase-data,
+nst: 8
+dmin: 1.642
+rms: 0.21
+gap: 190.75
+magType: ml
+type: earthquake
+title: M 2.4 - 42km NNW of Tonopah, Nevada
+ <=- 040 <=- dict
+ <=- 040 <=- dict
+ -=> 040 13: -=> 
+type: Feature
+id: nn00725849
+ -=> 040 geometry: -=> iter 
+			type: Point
+ -=> 041 coordinates: -=> iter 
+			0: -117.9877
+1: 38.1573
+2: 1.9
+ <=- 043 <=- list
+ <=- 042 <=- dict
+ -=> 042 properties: -=> iter 
+			mag: 2.1
+place: 67km W of Tonopah, Nevada
+time: 1589589716840
+updated: 1589590012402
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/nn00725849
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725849.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 68
+net: nn
+code: 00725849
+ids: ,nn00725849,
+sources: ,nn,
+types: ,geoserve,origin,phase-data,
+nst: 10
+dmin: 0.293
+rms: 0.05
+gap: 127.18
+magType: ml
+type: earthquake
+title: M 2.1 - 67km W of Tonopah, Nevada
+ <=- 043 <=- dict
+ <=- 043 <=- dict
+ -=> 043 14: -=> 
+type: Feature
+id: ak0206akubrq
+ -=> 043 geometry: -=> iter 
+			type: Point
+ -=> 044 coordinates: -=> iter 
+			0: -151.9327
+1: 60.7117
+2: 93.7
+ <=- 046 <=- list
+ <=- 045 <=- dict
+ -=> 045 properties: -=> iter 
+			mag: 1.3
+place: 35km W of Nikiski, Alaska
+time: 1589589398231
+updated: 1589590081772
+tz: -540
+url: https://earthquake.usgs.gov/earthquakes/eventpage/ak0206akubrq
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ak0206akubrq.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 26
+net: ak
+code: 0206akubrq
+ids: ,ak0206akubrq,
+sources: ,ak,
+types: ,geoserve,origin,
+nst: None
+dmin: None
+rms: 0.7
+gap: None
+magType: ml
+type: earthquake
+title: M 1.3 - 35km W of Nikiski, Alaska
+ <=- 046 <=- dict
+ <=- 046 <=- dict
+ -=> 046 15: -=> 
+type: Feature
+id: us70009hik
+ -=> 046 geometry: -=> iter 
+			type: Point
+ -=> 047 coordinates: -=> iter 
+			0: -115.216
+1: 44.4533
+2: 11.18
+ <=- 049 <=- list
+ <=- 048 <=- dict
+ -=> 048 properties: -=> iter 
+			mag: 2.6
+place: 66km E of Cascade, Idaho
+time: 1589589081713
+updated: 1589591310040
+tz: -420
+url: https://earthquake.usgs.gov/earthquakes/eventpage/us70009hik
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us70009hik.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: reviewed
+tsunami: 0
+sig: 104
+net: us
+code: 70009hik
+ids: ,us70009hik,
+sources: ,us,
+types: ,geoserve,origin,phase-data,
+nst: None
+dmin: 0.845
+rms: 0.94
+gap: 82
+magType: ml
+type: earthquake
+title: M 2.6 - 66km E of Cascade, Idaho
+ <=- 049 <=- dict
+ <=- 049 <=- dict
+ -=> 049 16: -=> 
+type: Feature
+id: nn00725845
+ -=> 049 geometry: -=> iter 
+			type: Point
+ -=> 050 coordinates: -=> iter 
+			0: -117.9763
+1: 38.1245
+2: 1.4
+ <=- 052 <=- list
+ <=- 051 <=- dict
+ -=> 051 properties: -=> iter 
+			mag: 1.9
+place: 65km W of Tonopah, Nevada
+time: 1589589032780
+updated: 1589589292405
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/nn00725845
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725845.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 56
+net: nn
+code: 00725845
+ids: ,nn00725845,
+sources: ,nn,
+types: ,geoserve,origin,phase-data,
+nst: 7
+dmin: 1.014
+rms: 0.18
+gap: 154.81
+magType: ml
+type: earthquake
+title: M 1.9 - 65km W of Tonopah, Nevada
+ <=- 052 <=- dict
+ <=- 052 <=- dict
+ -=> 052 17: -=> 
+type: Feature
+id: ak0206aksm98
+ -=> 052 geometry: -=> iter 
+			type: Point
+ -=> 053 coordinates: -=> iter 
+			0: -150.7301
+1: 66.9793
+2: 9.5
+ <=- 055 <=- list
+ <=- 054 <=- dict
+ -=> 054 properties: -=> iter 
+			mag: 1.5
+place: 38km SW of Coldfoot, Alaska
+time: 1589588913081
+updated: 1589589699111
+tz: -540
+url: https://earthquake.usgs.gov/earthquakes/eventpage/ak0206aksm98
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ak0206aksm98.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 35
+net: ak
+code: 0206aksm98
+ids: ,ak0206aksm98,
+sources: ,ak,
+types: ,geoserve,origin,
+nst: None
+dmin: None
+rms: 0.66
+gap: None
+magType: ml
+type: earthquake
+title: M 1.5 - 38km SW of Coldfoot, Alaska
+ <=- 055 <=- dict
+ <=- 055 <=- dict
+ -=> 055 18: -=> 
+type: Feature
+id: nn00725843
+ -=> 055 geometry: -=> iter 
+			type: Point
+ -=> 056 coordinates: -=> iter 
+			0: -117.8658
+1: 38.1523
+2: 0
+ <=- 058 <=- list
+ <=- 057 <=- dict
+ -=> 057 properties: -=> iter 
+			mag: 2.5
+place: 56km W of Tonopah, Nevada
+time: 1589588786430
+updated: 1589589133037
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/nn00725843
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725843.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 96
+net: nn
+code: 00725843
+ids: ,nn00725843,
+sources: ,nn,
+types: ,geoserve,origin,phase-data,
+nst: 21
+dmin: 0.35
+rms: 0.79
+gap: 87.15
+magType: ml
+type: earthquake
+title: M 2.5 - 56km W of Tonopah, Nevada
+ <=- 058 <=- dict
+ <=- 058 <=- dict
+ -=> 058 19: -=> 
+type: Feature
+id: nn00725841
+ -=> 058 geometry: -=> iter 
+			type: Point
+ -=> 059 coordinates: -=> iter 
+			0: -117.9038
+1: 38.18
+2: 0.7
+ <=- 061 <=- list
+ <=- 060 <=- dict
+ -=> 060 properties: -=> iter 
+			mag: 1.9
+place: 60km WNW of Tonopah, Nevada
+time: 1589588667150
+updated: 1589588873931
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/nn00725841
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725841.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 56
+net: nn
+code: 00725841
+ids: ,nn00725841,
+sources: ,nn,
+types: ,geoserve,origin,phase-data,
+nst: 8
+dmin: 0.474
+rms: 0.98
+gap: 132.15
+magType: ml
+type: earthquake
+title: M 1.9 - 60km WNW of Tonopah, Nevada
+ <=- 061 <=- dict
+ <=- 061 <=- dict
+ -=> 061 20: -=> 
+type: Feature
+id: ci39202359
+ -=> 061 geometry: -=> iter 
+			type: Point
+ -=> 062 coordinates: -=> iter 
+			0: -117.410667
+1: 35.608667
+2: 4.72
+ <=- 064 <=- list
+ <=- 063 <=- dict
+ -=> 063 properties: -=> iter 
+			mag: 1.86
+place: 18km S of Trona, CA
+time: 1589588643040
+updated: 1589588866691
+tz: -480
+url: https://earthquake.usgs.gov/earthquakes/eventpage/ci39202359
+detail: https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ci39202359.geojson
+felt: None
+cdi: None
+mmi: None
+alert: None
+status: automatic
+tsunami: 0
+sig: 53
+net: ci
+code: 39202359
+ids: ,ci39202359,
+sources: ,ci,
+types: ,geoserve,nearby-cities,origin,phase-data,scitech-link,
+nst: 26
+dmin: 0.04747
+rms: 0.15
+gap: 101
+magType: ml
+type: earthquake
+title: M 1.9 - 18km S of Trona, CA
+ <=- 064 <=- dict
+ <=- 064 <=- dict
+ <=- 064 <=- list
+features:63 <=- 

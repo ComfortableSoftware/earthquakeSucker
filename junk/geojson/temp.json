@@ -1,0 +1,5 @@
+{
+	"type":"FeatureCollection",
+	"metadata":
+	{
+	"generated":1589533799000,"url":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson","title":"USGS All Earthquakes, Past Month","status":200,"api":"1.8.1","count":13847},"features":[{"type":"Feature","properties":{"mag":2.02,"place":"18km SE of Ocotillo Wells, CA","time":1589533644940,"updated":1589533788319,"tz":-480,"url":"https://earthquake.usgs.gov/earthquakes/eventpage/ci39200991","detail":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/ci39200991.geojson","felt":null,"cdi":null,"mmi":null,"alert":null,"status":"automatic","tsunami":0,"sig":63,"net":"ci","code":"39200991","ids":",ci39200991,","sources":",ci,","types":",geoserve,nearby-cities,origin,phase-data,scitech-link,","nst":68,"dmin":0.1331,"rms":0.28,"gap":30,"magType":"ml","type":"earthquake","title":"M 2.0 - 18km SE of Ocotillo Wells, CA"},"geometry":{"type":"Point","coordinates":[-116.0213318,33.0128326,6.89]},"id":"ci39200991"},

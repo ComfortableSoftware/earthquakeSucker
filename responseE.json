@@ -1,0 +1,378 @@
+{
+	'type': 'FeatureCollection',
+	'metadata': {
+		'generated': 1590414980000,
+		'url': 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&limit=10000&starttime=2019-12-01&endtime=2020-01-01&offset=10000',
+		'title': 'USGS Earthquakes',
+		'status': 200,
+		'api': '1.8.1',
+		'limit': 10000,
+		'offset': 10000,
+		'count': 10000
+	},
+	'features': [
+		{
+			'type': 'Feature',
+			'properties': {
+				'mag': 0.97,
+				'place': '0km WNW of Manhattan, Montana',
+				'time': 1575657542870,
+				'updated': 1575675439410,
+				'tz': -420,
+				'url': 'https://earthquake.usgs.gov/earthquakes/eventpage/mb80374389',
+				'detail': 'https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=mb80374389&format=geojson',
+				'felt': None,
+				'cdi': None,
+				'mmi': None,
+				'alert': None,
+				'status': 'reviewed',
+				'tsunami': 0,
+				'sig': 14,
+				'net': 'mb',
+				'code': '80374389',
+				'ids': ',mb80374389,',
+				'sources': ',mb,',
+				'types': ',geoserve,origin,phase-data,',
+				'nst': 5,
+				'dmin': 0.305,
+				'rms': 0.06,
+				'gap': 203,
+				'magType': 'ml',
+				'type': 'earthquake',
+				'title': 'M 1.0 - 0km WNW of Manhattan, Montana'
+			},
+			'geometry': {
+				'type': 'Point',
+				'coordinates': [
+					-111.3368333,
+					45.8575,
+					5.97
+				]
+			},
+			'id': 'mb80374389'
+		},
+		{
+			'type': 'Feature',
+			'properties': {
+				'mag': 0.32,
+				'place': '6km SE of Mammoth Lakes, CA',
+				'time': 1575657446040,
+				'updated': 1575921425272,
+				'tz': -480,
+				'url': 'https://earthquake.usgs.gov/earthquakes/eventpage/nc73312241',
+				'detail': 'https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nc73312241&format=geojson',
+				'felt': None,
+				'cdi': None,
+				'mmi': None,
+				'alert': None,
+				'status': 'reviewed',
+				'tsunami': 0,
+				'sig': 2,
+				'net': 'nc',
+				'code': '73312241',
+				'ids': ',nc73312241,',
+				'sources': ',nc,',
+				'types': ',geoserve,nearby-cities,origin,phase-data,scitech-link,',
+				'nst': 11,
+				'dmin': 0.0088,
+				'rms': 0.02,
+				'gap': 195,
+				'magType': 'md',
+				'type': 'earthquake',
+				'title': 'M 0.3 - 6km SE of Mammoth Lakes, CA'
+			},
+			'geometry': {
+				'type': 'Point',
+				'coordinates': [
+					-118.9205,
+					37.6043333,
+					1.83
+				]
+			},
+			'id': 'nc73312241'
+		},
+		{
+			'type': 'Feature'
+		},
+		'properties'
+		:
+		{
+			'mag': 4.6,
+			'place': 'Pacific-Antarctic Ridge',
+			'time': 1575656049313,
+			'updated': 1583005977040,
+			'tz': -540,
+			'url': 'https://earthquake.usgs.gov/earthquakes/eventpage/us60006r8k',
+			'detail': 'https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us60006r8k&format=geojson',
+			'felt': None,
+			'cdi': None,
+			'mmi': None,
+			'alert': None,
+			'status': 'reviewed',
+			'tsunami': 0,
+			'sig': 326,
+			'net': 'us',
+			'code': '60006r8k',
+			'ids': ',us60006r8k,',
+			'sources': ',us,',
+			'types': ',geoserve,origin,phase-data,',
+			'nst': None,
+			'dmin': 37.636,
+			'rms': 0.75,
+			'gap': 99,
+			'magType': 'mb',
+			'type': 'earthquake',
+			'title': 'M 4.6 - Pacific-Antarctic Ridge'
+		},
+		'geometry'
+		:
+		{
+			'type': 'Feature',
+			'properties': {
+				'mag': 0.47,
+				'place': '20km ESE of Little Lake, CA',
+				'time': 1575159431150,
+				'updated': 1575159638667,
+				'tz': -480,
+				'url': 'https://earthquake.usgs.gov/earthquakes/eventpage/ci39212432',
+				'detail': 'https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci39212432&format=geojson',
+				'felt': None,
+				'cdi': None,
+				'mmi': None,
+				'alert': None,
+				'status': 'automatic',
+				'tsunami': 0,
+				'sig': 3,
+				'net': 'ci',
+				'code': '39212432',
+				'ids': ',ci39212432,',
+				'sources': ',ci,',
+				'types': ',geoserve,nearby-cities,origin,phase-data,scitech-link,',
+				'nst': 9,
+				'dmin': 0.0601,
+				'rms': 0.13,
+				'gap': 79,
+				'magType': 'ml',
+				'type': 'earthquake',
+				'title': 'M 0.5 - 20km ESE of Little Lake, CA'
+			},
+			'geometry': {
+				'type': 'Point',
+				'coordinates': [
+					-117.685,
+					35.8946667,
+					1.7
+				]
+			},
+			'id': 'ci39212432'
+		},
+		{
+			'type': 'Feature',
+			'properties': {
+				'mag': 0.52,
+				'place': '9km WSW of Idyllwild, CA',
+				'time': 1575159395250,
+				'updated': 1575221540790,
+				'tz': -480,
+				'url': 'https://earthquake.usgs.gov/earthquakes/eventpage/ci39212416',
+				'detail': 'https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci39212416&format=geojson',
+				'felt': None,
+				'cdi': None,
+				'mmi': None,
+				'alert': None,
+				'status': 'reviewed',
+				'tsunami': 0,
+				'sig': 4,
+				'net': 'ci',
+				'code': '39212416',
+				'ids': ',ci39212416,',
+				'sources': ',ci,',
+				'types': ',focal-mechanism,geoserve,nearby-cities,origin,phase-data,scitech-link,',
+				'nst': 25,
+				'dmin': 0.07586,
+				'rms': 0.24,
+				'gap': 104,
+				'magType': 'ml',
+				'type': 'earthquake',
+				'title': 'M 0.5 - 9km WSW of Idyllwild, CA'
+			},
+			'geometry': {
+				'type': 'Point',
+				'coordinates': [
+					-116.8051667,
+					33.7123333,
+					17.27
+				]
+			},
+			'id': 'ci39212416'
+		},
+		{
+			'type': 'Feature',
+			'properties': {
+				'mag': 2.2,
+				'place': '28km WSW of Carlin, Nevada',
+				'time': 1575159337811,
+				'updated': 1575409277564,
+				'tz': -480,
+				'url': 'https://earthquake.usgs.gov/earthquakes/eventpage/nn00712267',
+				'detail': 'https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=nn00712267&format=geojson',
+				'felt': None,
+				'cdi': None,
+				'mmi': None,
+				'alert': None,
+				'status': 'reviewed',
+				'tsunami': 0,
+				'sig': 74,
+				'net': 'nn',
+				'code': '00712267',
+				'ids': ',nn00712267,',
+				'sources': ',nn,',
+				'types': ',geoserve,origin,phase-data,',
+				'nst': 7,
+				'dmin': 0.34,
+				'rms': 0.0991,
+				'gap': 280.46,
+				'magType': 'ml',
+				'type': 'earthquake',
+				'title': 'M 2.2 - 28km WSW of Carlin, Nevada'
+			},
+			'geometry': {
+				'type': 'Point',
+				'coordinates': [
+					-116.3998,
+					40.5978,
+					14.3
+				]
+			},
+			'id': 'nn00712267'
+		},
+		{
+			'type': 'Feature',
+			'properties': {
+				'mag': 0.75,
+				'place': '11km NE of Coso Junction, CA',
+				'time': 1575159069260,
+				'updated': 1575400793803,
+				'tz': -480,
+				'url': 'https://earthquake.usgs.gov/earthquakes/eventpage/ci39212408',
+				'detail': 'https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci39212408&format=geojson',
+				'felt': None,
+				'cdi': None,
+				'mmi': None,
+				'alert': None,
+				'status': 'reviewed',
+				'tsunami': 0,
+				'sig': 9,
+				'net': 'ci',
+				'code': '39212408',
+				'ids': ',ci39212408,',
+				'sources': ',ci,',
+				'types': ',geoserve,nearby-cities,origin,phase-data,scitech-link,',
+				'nst': 15,
+				'dmin': 0.01122,
+				'rms': 0.11,
+				'gap': 73,
+				'magType': 'ml',
+				'type': 'earthquake',
+				'title': 'M 0.8 - 11km NE of Coso Junction, CA'
+			},
+			'geometry': {
+				'type': 'Point',
+				'coordinates': [
+					-117.8525,
+					36.1065,
+					3.81
+				]
+			},
+			'id': 'ci39212408'
+		},
+		{
+			'type': 'Feature',
+			'properties': {
+				'mag': 4,
+				'place': '23km E of Chimbarongo, Chile',
+				'time': 1575158597098,
+				'updated': 1582138706040,
+				'tz': -240,
+				'url': 'https://earthquake.usgs.gov/earthquakes/eventpage/us70006ewl',
+				'detail': 'https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us70006ewl&format=geojson',
+				'felt': 1,
+				'cdi': 1,
+				'mmi': None,
+				'alert': None,
+				'status': 'reviewed',
+				'tsunami': 0,
+				'sig': 246,
+				'net': 'us',
+				'code': '70006ewl',
+				'ids': ',us70006ewl,',
+				'sources': ',us,',
+				'types': ',dyfi,geoserve,origin,phase-data,',
+				'nst': None,
+				'dmin': 0.068,
+				'rms': 0.53,
+				'gap': 88,
+				'magType': 'mb',
+				'type': 'earthquake',
+				'title': 'M 4.0 - 23km E of Chimbarongo, Chile'
+			},
+			'geometry': {
+				'type': 'Point',
+				'coordinates': [
+					-70.7925,
+					-34.724,
+					101.76
+				]
+			},
+			'id': 'us70006ewl'
+		},
+		{
+			'type': 'Feature',
+			'properties': {
+				'mag': 0.6,
+				'place': '21km ESE of Little Lake, CA',
+				'time': 1575158452610,
+				'updated': 1575158668084,
+				'tz': -480,
+				'url': 'https://earthquake.usgs.gov/earthquakes/eventpage/ci39212400',
+				'detail': 'https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=ci39212400&format=geojson',
+				'felt': None,
+				'cdi': None,
+				'mmi': None,
+				'alert': None,
+				'status': 'automatic',
+				'tsunami': 0,
+				'sig': 6,
+				'net': 'ci',
+				'code': '39212400',
+				'ids': ',ci39212400,',
+				'sources': ',ci,',
+				'types': ',geoserve,nearby-cities,origin,phase-data,scitech-link,',
+				'nst': 8,
+				'dmin': 0.07505,
+				'rms': 0.17,
+				'gap': 97,
+				'magType': 'ml',
+				'type': 'earthquake',
+				'title': 'M 0.6 - 21km ESE of Little Lake, CA'
+			},
+			'geometry': {
+				'type': 'Point',
+				'coordinates': [
+					-117.6975,
+					35.86,
+					4.64
+				]
+			},
+			'id': 'ci39212400'
+		}
+	],
+	'bbox': [
+		-179.9361,
+		-58.5522,
+		-3.4,
+		179.9639,
+		69.4975,
+		608.56
+	]
+}

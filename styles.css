@@ -1,0 +1,376 @@
+<style type="text/css">
+
+:root
+{
+	--columns: #666600;
+	--rankedBackground: #330033;
+}
+
+body
+{
+	font-size: 16px;
+	background-color: #333300;
+	color: #663366;
+	width: 300ch;
+}
+
+table, td
+{
+	padding: 3px;
+	border-collapse: separate;
+	border: 2px solid #660033;
+	border-spacing: 0px 6px;
+	margin: none;
+}
+
+.r1
+{
+	color: #339966;
+	border-color: #6600cc;
+}
+
+.r0
+{
+	color: #336666;
+	border-color: #6600ff;
+}
+
+.close0r0
+{
+	border-left: thin solid var(--columns);
+	border-right: thin solid var(--columns);
+	border-bottom: medium solid #ff0000;
+	border-top: medium solid #ff0000;
+	color: #ff0000;
+	background-color: var(--rankedBackground);
+}
+
+.close1r0
+{
+	border-left: thin solid var(--columns);
+	border-right: thin solid var(--columns);
+	border-bottom: medium solid #cc0099;
+	border-top: medium solid #cc0099;
+	color: #cc0099;
+	background-color: var(--rankedBackground);
+}
+
+.close2r0
+{
+	border-left: thin solid var(--columns);
+	border-right: thin solid var(--columns);
+	border-bottom: medium solid #990099;
+	border-top: medium solid #990099;
+	color: #990099;
+	background-color: var(--rankedBackground);
+}
+
+.close3r0
+{
+	border-left: thin solid var(--columns);
+	border-right: thin solid var(--columns);
+	border-bottom: medium solid #660099;
+	border-top: medium solid #660099;
+	color: #660099;
+	background-color: var(--rankedBackground);
+}
+
+.close0r1
+{
+	border-left: thin solid var(--columns);
+	border-right: thin solid var(--columns);
+	border-bottom: medium solid #ff6600;
+	border-top: medium solid #ff6600;
+	color: #ff6600;
+	background-color: var(--rankedBackground);
+}
+
+.close1r1
+{
+	border-left: thin solid var(--columns);
+	border-right: thin solid var(--columns);
+	border-bottom: medium solid #cc66cc;
+	border-top: medium solid #cc66cc;
+	color: #cc66cc;
+	background-color: var(--rankedBackground);
+}
+
+.close2r1
+{
+	border-left: thin solid var(--columns);
+	border-right: thin solid var(--columns);
+	border-bottom: medium solid #996699;
+	border-top: medium solid #996699;
+	color: #996699;
+	background-color: var(--rankedBackground);
+}
+
+.close3r1
+{
+	border-left: thin solid var(--columns);
+	border-right: thin solid var(--columns);
+	border-bottom: medium solid #666699;
+	border-top: medium solid #666699;
+	color: #666699;
+	background-color: var(--rankedBackground);
+}
+
+.fp, .fpr0, .fpr1
+{
+	font-size: 6px;
+	color: #333366
+}
+
+th, .labels
+{
+	padding: 5;
+	color: #333399;
+	background-color: #336633;
+	border: thin solid black;
+	padding: none;
+	align: center;
+}
+
+.lnks
+{
+	padding: 5;
+	color: #330033;
+	background-color: #336633;
+	outline: none;
+	padding: none;
+	align: center;
+}
+
+.internal
+{
+	decoration: none;
+	column-span: all;
+}
+
+.L00
+{
+	color: #0000ff;
+	background-color: #ff0000;
+}
+
+.L01
+{
+	color: #0099ff;
+	background-color: #ff0000;
+}
+
+.L02
+{
+	color: #00ccff;
+	background-color: #ff0000;
+}
+
+.L03
+{
+	color: #00ffff;
+	background-color: #ff0000;
+}
+
+
+.L04
+{
+	color: #00cc66;
+	background-color: #ff0066;
+}
+
+.L05
+{
+	color: #666699;
+	background-color: #ff0066;
+}
+
+.L06
+{
+	color: #009900;
+	background-color: #ff0066;
+}
+
+.L07
+{
+	color: #006666;
+	background-color: #ff0066;
+}
+
+
+.L08
+{
+	color: #99cc66;
+	background-color: #ff0099
+}
+
+.L09
+{
+	color: #99ff00;
+	background-color: #ff0099;
+}
+
+.L0A
+{
+	color: #999900;
+	background-color: #ff0099;
+}
+
+.L0B
+{
+	color: #ff9900;
+	background-color: #ff0099;
+}
+
+
+.L0C
+{
+	color: #990000;
+	background-color: #ff00ff
+}
+
+.L0D
+{
+	color: #ffff99;
+	background-color: #ff00ff
+}
+
+.L0E
+{
+	color: #66ff99;
+	background-color: #ff00ff
+}
+
+.L0F
+{
+	color: #9999ff;
+	background-color: #ff00ff
+}
+
+
+.L10
+{
+	color: #ff99ff;
+	background-color: #9900ff;
+}
+
+.L11
+{
+	color: #ff0099;
+	background-color: #9900ff;
+}
+
+.L12
+{
+	color: #996600;
+	background-color: #9900ff;
+}
+
+.L13
+{
+	color: #006699;
+	background-color: #9900ff;
+}
+
+.L14
+{
+	color: #006600;
+	background-color: #6600ff;
+}
+
+.L15
+{
+	color: #669966;
+	background-color: #6600ff;
+}
+
+.L16
+{
+	color: #999966;
+	background-color: #6600ff;
+}
+
+.L17
+{
+	color: #669900;
+	background-color: #6600ff;
+}
+
+.L18
+{
+	color: #666600;
+	background-color: #6666ff;
+}
+
+.L19
+{
+	color: #669999;
+	background-color: #6666ff;
+}
+
+.L1A
+{
+	color: #ff9966;
+	background-color: #6666ff;
+}
+
+.L1B
+{
+	color: #ff33cc;
+	background-color: #6666ff
+}
+
+.L1C
+{
+	color: #ff99ff;
+	background-color: #0000ff;
+}
+
+.L1D
+{
+	color: #ff3399;
+	background-color: #0000ff;
+}
+
+.L1E
+{
+	color: #996600;
+	background-color: #0000ff;
+}
+
+.L1F
+{
+	color: #ff3300;
+	background-color: #0000ff;
+}
+
+.bow
+{
+	color: #ffffff;
+	background-color: #000000;
+}
+
+.wob
+{
+	color: #000000;
+	background-color: #ffffff;
+}
+
+.g1
+{
+	color: #333333;
+	background-color: #999999;
+}
+
+.g2
+{
+	color: #666666;
+	background-color: #333333;
+}
+
+.g3
+{
+	color: #999999;
+	background-color: #666666;
+}
+
+</style>

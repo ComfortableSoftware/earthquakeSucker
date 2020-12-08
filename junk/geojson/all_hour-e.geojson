@@ -1,0 +1,52 @@
+{"type":"FeatureCollection",
+	"metadata":
+	{
+		"generated":1589592179000,
+		"url":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson",
+		"title":"USGS All Earthquakes, Past Hour",
+		"status":200,
+		"api":"1.8.1",
+		"count":21
+	},
+	"features":
+	[
+		{
+			"type":"Feature",
+			"properties":
+			{
+				"mag":2.5,
+				"place":"46km WNW of Tonopah, Nevada",
+				"time":1589591771990,
+				"updated":1589592053405,
+				"tz":-480,
+				"url":"https://earthquake.usgs.gov/earthquakes/eventpage/nn00725870",
+				"detail":"https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nn00725870.geojson",
+				"felt":null,
+				"cdi":null,
+				"mmi":null,
+				"alert":null,
+				"status":"automatic",
+				"tsunami":0,
+				"sig":96,
+				"net":"nn",
+				"code":"00725870",
+				"ids":",nn00725870,",
+				"sources":",nn,",
+				"types":",geoserve,origin,phase-data,",
+				"nst":12,
+				"dmin":0.367,
+				"rms":0.16,
+				"gap":166.8,
+				"magType":"ml",
+				"type":"earthquake",
+				"title":"M 2.5 - 46km WNW of Tonopah, Nevada"
+			},
+			"geometry":
+			{
+				"type":"Point",
+				"coordinates":[-117.739,38.1987,1.6]
+			},
+			"id":"nn00725870"
+		}
+	]
+}

@@ -1,0 +1,119 @@
+<style type="text/css">
+
+body
+{
+	font-size: 16px;
+	background-color: #333300;
+	color: #663366;
+	width: 300ch;
+}
+
+table, td
+{
+	padding: 3px;
+	border-collapse: separate;
+	border: 2px solid #660033;
+	border-spacing: 0px 6px;
+	margin: none;
+}
+
+.r1
+{
+	color: #33ffcc;
+	border-color: #6600cc;
+}
+
+.r0
+{
+	color: #3399ff;
+	border-color: #6600ff;
+}
+
+.close0r0
+{
+	border-color: #ff0000;
+	color: #ff0000;
+	background-color: #330033;
+}
+
+.close1r0
+{
+	border-color: #cc0099;
+	color: #cc0099;
+	background-color: #330033;
+}
+
+.close2r0
+{
+	border-color: #990099;
+	color: #990099;
+	background-color: #330033;
+}
+
+.close3r0
+{
+	border-color: #660099;
+	color: #660099;
+	background-color: #330033;
+}
+
+.close0r1
+{
+	border-color: #ff6600;
+	color: #ff6600;
+	background-color: #330033;
+}
+
+.close1r1
+{
+	border-color: #cc66cc;
+	color: #cc66cc;
+	background-color: #330033;
+}
+
+.close2r1
+{
+	border-color: #996699;
+	color: #996699;
+	background-color: #330033;
+}
+
+.close3r1
+{
+	border-color: #666699;
+	color: #666699;
+	background-color: #330033;
+}
+
+.fp, .fpr0, .fpr1
+{
+	font-size: 6px;
+	color: #333366
+}
+
+th, .labels
+{
+	padding: 5;
+	color: #333399;
+	background-color: #336633;
+	outline: none;
+	padding: none;
+	align: center;
+}
+
+.lnks
+{
+	padding: 5;
+	color: #330033;
+	background-color: #336633;
+	outline: none;
+	padding: none;
+	align: center;
+}
+
+.internal
+{
+	decoration: none;
+	column-span: all;
+}
+</style>
