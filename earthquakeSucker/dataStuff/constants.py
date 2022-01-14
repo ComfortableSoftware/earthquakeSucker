@@ -8,7 +8,7 @@ GEOJSONALLSMRY = lambda TERM: f"""https://earthquake.usgs.gov/earthquakes/feed/v
 GEOJSONDETAIL = lambda ID: f"""https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/{ID}.geojson"""
 GEOJSONDETAILQUERY = lambda ID: f"""https://earthquake.usgs.gov/fdsnws/event/1/query?eventid={ID}&format=geojson"""
 GEOJSONQUERY = lambda QUERY: f"""https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson{QUERY}"""
-
+TESTINGONE = lambda X: f"""https://earthquake.usgs.gov/feed/v1.0/query.geojson?starttime=2021-12-01%2000:00:00&endtime=2022-01-14%2023:59:59&minmagnitude=1&orderby=time"""
 DATATABLENAME = "USGSData"
 STATSTABLENAME = "USGSStats"
 QUERIESINTABLENAME = "queriesIn"
@@ -18,6 +18,7 @@ GEOJSONPREFIXTABLENAME = "PFXprefix"
 NUMROWSPERPG = 150
 NUMLINESPERSEG = 15
 
+BKQT = "`"
 BSSTR = '\\'
 CBSSTR = "]"
 CBSTR = "}"
@@ -31,10 +32,6 @@ OBSTR = "{"
 SGLQT = "'"
 TABSTR = "\t"
 
-EMPTYDICT = {}
-EMPTYLIST = []
-EMPTYSTR = ""
-EMPTYTUPLE = ()
 DEFLAT = 41.0
 DEFLON = -112.0
 DEFQUERYNUM = 1
@@ -42,10 +39,15 @@ DFLTDEC = 0.0
 DFLTDT = '"1970-01-01 00:00:01"'
 DFLTFLOAT = 0.0
 DFLTINT = 0
-DFLTSTR = SGLQT + DQTSTR + DQTSTR + SGLQT
+DFlTstr = ''
 DFLTstr = ""
 DFlTSTR = DQTSTR + SGLQT + SGLQT + DQTSTR
-DFlTstr = ''
+DFLTSTR = SGLQT + DQTSTR + DQTSTR + SGLQT
+EMPTY_STR_LST = [None, "", DBLQT, f"""{DBLQT}{DBLQT}""", SGLQT, f"""{SGLQT}{SGLQT}""", BKQT, f"""{BKQT}{BKQT}""", "None", "\r", NEWLINE, "\r\n", "\n\r", ]
+EMPTYDICT = {}
+EMPTYLIST = []
+EMPTYSTR = ""
+EMPTYTUPLE = ()
 
 JSONCBRACKETS = [CBSTR, CBSSTR]
 JSONOBRACKETS = [OBSTR, OBSSTR]

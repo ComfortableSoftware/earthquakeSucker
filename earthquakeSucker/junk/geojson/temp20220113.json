@@ -1,0 +1,23 @@
+"geometry":
+  "coordinates": [-25.2567, -58.7046, 10],
+  "type": "Point",
+  "id": "us7000gb91",
+  "properties":
+    "alert": null,
+    "cdi": null,
+    "code": "7000gb91",
+    "detail": "https://earthquake.usgs.gov/fdsnws/event/1/query?eventid=us7000gb91&format=geojson",
+    "dmin": 7.629,
+    "felt": null,
+    "gap": 82,
+    "ids":
+    ",us7000gb91,",
+    "mag": 4.8,
+    "magType": "mb",
+    "mmi": null,
+    "net": "us",
+    "nst": null,
+    "place": null,
+    "rms": 0.87,
+    "sig": 354,
+    "sources": ",us,", "status": "reviewed", "time": 1641969328580, "title": "M 4.8 - ", "tsunami": 0, "type": "earthquake", "types": ",origin,phase-data,", "tz": null, "updated": 1641970690040, "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000gb91", "type": "Feature"
