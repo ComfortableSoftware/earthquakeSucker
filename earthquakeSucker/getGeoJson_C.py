@@ -12,12 +12,15 @@ import geojson as GJ
 #
 
 
+DEFAULTDIRECTORY = "~/.cache/earthquakeSucker/"
+DEFAULTLIMIT = 20000
+DEFAULTOFFSET = 1
 GEOJSONALLSMRY = lambda TERM: f"""https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_{TERM}.geojson"""
 GEOJSONCOUNT = lambda QUERY: f"""https://earthquake.usgs.gov/fdsnws/event/1/count?format=geojson{QUERY}"""
 GEOJSONDETAIL = lambda ID: f"""https://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/{ID}.geojson"""
 GEOJSONDETAILQUERY = lambda ID: f"""https://earthquake.usgs.gov/fdsnws/event/1/query?eventid={ID}&format=geojson"""
-GEOJSONQUERY = lambda QUERY: f"""https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson{QUERY}"""
 GEOJSONENUMURL = """https://earthquake.usgs.gov/fdsnws/event/1/application.json"""
+GEOJSONQUERY = lambda QUERY: f"""https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson{QUERY}"""
 
 
 def getGeoJson_C(object):
@@ -38,39 +41,48 @@ def getGeoJson_C(object):
   # start of makeQuery
   # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
   def makeQuery(self, *,
-      count_=False,
-      endTime_=None,  # string defaults to now()
-      startTime_=None,  # string defaults to now(SUB interval 30 day)
-      updatedAfter_=None,  # string no default
-      minLatitude_=-90,  # decimal bounding box
-      maxLatitude_=90,  # decimal bounding box
-      minLongitude_=-180,  # decimal bounding box
-      maxLongitude_=180,  # decimal bounding box
-      latitude_=None,  # decimal circle
-      longitude_=None,  # decimal circle
-      maxRadiusDEG_=180,  # decimal circle
-      maxRadiusKM_=20001.6,  # decimal circle
+      alertLevel_=None,  # string green, yellow, orange, red
+      callback_=None,  # string  [A-Za-z0-9\._]+
       catalog_=None,  # string
       contributor_=None,  # string
+      count_=False,  # bool True to return the count query URL, False to return the working query URL
+      endTime_=None,  # string defaults to now()
       eventid_=None,  # string
+      eventType_=None,  # string
       includeAllMagnitudes_=False,  # bool
       includeAllOrigins_=False,  # bool
       includeArrivals_=False,  # bool unimplemented currently
       includeDeleted_=False,  # bool or "only"
       includeSuperseded_=False,  # bool
-      limit_=(1, 20000),  # integer 1 number max records to return, 2 numbers offset and number of records to return
-      maxDepth_=1000,  # decimal -100 to 1000km
-      maxMagnitude_=None,  # decimal
-      minDepth_=-100,  # decimal -100 10 1000km
-      minMagnitude_=None,  # decimal
-      offset_=1,  # integer
-      orderBy_="time",  # time, time-asc, magnitude, magnitude_asc
-      alertLevel_=None,  # string green, yellow, orange, red
-      callback_=None,  # string  [A-Za-z0-9\._]+
-      eventType_=None,  # string
-      jsonError_=False,  # bool return formatted errors or not
+      jsonError_=None,  # bool return formatted errors or not
+      latitude_=None,  # decimal circle
+      limit_=None,  # integer
+      longitude_=None,  # decimal circle
       maxCDI_=None,  # decimal 0 to 12 comunity determined intensity from DYFI
+      maxDepth_=None,  # decimal -100 to 1000km
       maxGap_=None,  # decimal 0 to 360
+      maxLatitude_=None,  # decimal bounding box
+      maxLongitude_=None,  # decimal bounding box
+      maxMagnitude_=None,  # decimal
+      maxMMI_=None,  # decimal 0 to 12 max modified mercalli intensity
+      maxRadiusDEG_=None,  # decimal circle
+      maxRadiusKM_=None,  # decimal circle
+      maxSig_=None,  # int significance
+      minCDI_=None,  # decimal see maxCDI_
+      minDepth_=None,  # decimal -100 10 1000km
+      minFelt_=None,  # int 1 - ∞ minimum number of DYFI responses to return
+      minGap_=None,  # decimal 0 to 360
+      minLatitude_=None,  # decimal bounding box
+      minLongitude_=None,  # decimal bounding box
+      minMagnitude_=None,  # decimal
+      minSig_=None,  # integer
+      offset_=None,  # integer 1 to ∞
+      orderBy_=None,  # time, time-asc, magnitude, magnitude_asc
+      productCode_=None,  # string
+      productType_=None,  # string moment-tensor focal-mechanism shakemap losspager dyfi
+      reviewStatus_=None,  # string automatic or reviewed or all
+      startTime_=None,  # string defaults to now(SUB interval 30 day)
+      updatedAfter_=None,  # string no default
   ):
     # fold here ⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2
     pass
