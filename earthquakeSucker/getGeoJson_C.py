@@ -45,7 +45,7 @@ def getGeoJson_C(object):
       callback_=None,  # string  [A-Za-z0-9\._]+
       catalog_=None,  # string
       contributor_=None,  # string
-      count_=False,  # bool True to return the count query URL, False to return the working query URL
+      count__=False,  # bool True to return the count query URL, False to return the working query URL
       endTime_=None,  # string defaults to now()
       eventid_=None,  # string
       eventType_=None,  # string
