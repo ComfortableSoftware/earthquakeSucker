@@ -10,7 +10,7 @@
 
 
 __all__ = [
-    "earthquakeSusker",
+    "earthquakeSucker",
 ]
 
 
