@@ -17,6 +17,7 @@ import requests as REQ
 
 
 DEFAULT_DIRECTORY = "~/.cache/earthquakeSucker/"
+DEFAULT_ENUMERATED_VALUES_FILENAME = "./enumeratedValues.json"
 DEFAULT_LIMIT = 20000
 DEFAULT_OFFSET = 1
 GEOJSON_ALL_SMRY = lambda TERM: f"""https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_{TERM}.geojson"""
