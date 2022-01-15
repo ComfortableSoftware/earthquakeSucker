@@ -3,6 +3,6 @@
 
 from earthquakeSucker import getGeoJson_C
 
-help(getGeoJson_C)
-with getGeoJson_C.flipIt() as GGJ:
-  help(GGJ)
+with getGeoJson_C.getGeoJson_C() as GGJ:
+  GGJ.getAFile()
+  GGJ.parseAFile()
