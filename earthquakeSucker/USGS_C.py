@@ -8,6 +8,20 @@ import requests as REQ
 import MySQLdb as DB
 
 
+listOfFileKeys = ['type', 'metadata', 'bbox', 'features']
+# 4
+listOf1stKeys = ['type', 'id', 'geometry', 'properties']
+# 8
+listOfMetaKeys = ['generated', 'url', 'title', 'status', 'api', 'count', 'limit', 'offset']
+# 2
+listOfGeoKeys = ['type', 'coordinates']
+# 0
+listOfFeatureKeys = []
+# 26
+listOfPropertyKeys = ['mag', 'place', 'time', 'updated', 'tz', 'url', 'detail', 'felt', 'cdi', 'mmi', 'alert',
+    'status', 'tsunami', 'sig', 'net', 'code', 'ids', 'sources', 'types', 'nst', 'dmin', 'rms', 'gap', 'magType', 'type', 'title']
+
+
 DEFAULT_DIRECTORY = "/home/will/.cache/earthquakeSucker/"
 DEFAULT_EAST = 180
 DEFAULT_ENUMERATED_VALUES_FILENAME = "./enumeratedValues.json"
@@ -18,6 +32,7 @@ DEFAULT_SOUTH = -90
 DEFAULT_TERM = "hour"  # hour month week day
 DEFAULT_WEST = -180
 GEOJSON_ENUM_URL = """https://earthquake.usgs.gov/fdsnws/event/1/application.json"""
+LOG_DIRECTORY = "/storage/logs/USGS/"
 
 
 BBOX = "bbox"
@@ -125,8 +140,11 @@ class USGS_C():
     self.CURRENT_NOW_STR = CFTDT.nowStr(dtObj_=self.CURRENT_NOW)
     self.CURRENT_TODAY_STR = CFTDT.todayStr(dtObj_=self.CURRENT_NOW)
     self.LIMIT = DEFAULT_LIMIT
+    self.LOG_FILENAME = f"""{LOG_DIRECTORY}{CURRENT_NOW_STR}.getGeoJson_C_log.txt"""
     self.OFFSET = DEFAULT_OFFSET
-    print("inited")
+    self.FD_LOG = None
+
+    self.logIt("Initialized")
     # fold here ⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2
   # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
   # end of __init__
@@ -137,6 +155,7 @@ class USGS_C():
   # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*
   def __enter__(self):
     # fold here ⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2
+    self.logIt("Entered")
     return self
     # fold here ⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2⟰2
   # * #*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*

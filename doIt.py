@@ -1,8 +1,8 @@
 #!/usr/bin/env /usr/bin/python
 
 
-from earthquakeSucker import getGeoJson_C
+from earthquakeSucker import USGS_C
 
-with getGeoJson_C.USGS_C() as GGJ:
+with USGS_C.USGS_C() as GGJ:
   GGJ.getAFile()
   GGJ.parseAFile()
