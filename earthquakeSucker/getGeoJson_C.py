@@ -36,6 +36,8 @@ SOUTH = "SOUTH"
 TOP = "TOP"
 TYPE = "type"
 WEST = "WEST"
+GEOMETRY = "geometry"
+PROPERTIES = "properties"
 
 
 EMPTY_BBOX = {
@@ -49,28 +51,30 @@ EMPTY_BBOX = {
 
 
 EMPTY_POINT = {
-    COORDINATES: [
+    COORDINATES: {
         LONGITUDE: 0,
         LATITUDE: 0,
         DEPTH: 0,
-    ]
-    TYPE_: "Point"
+    },
+    TYPE: "Point",
 }
 
 
 EMPTY_FEATURE = {
-  geometry: EMPTY_POINT,
+  GEOMETRY: EMPTY_POINT,
   ID: "",
-  properties: EMPTY_PROPS,
-  type_: "Feature"
+  PROPERTIES: EMPTY_PROPS,
+  TYPE: "Feature"
 }
 
 
 EMPTY_FEATURE_COLLECTION = {
     BBOX: EMPTY_BBOX,
-    FEATURES: [],
+    FEATURES: [
+      EMPTY_FEATURE,
+    ],
     METADATA: EMPTY_METADATA,
-    TYPE: FEATURECOLLECTIONS,
+    TYPE: "FeatureCollection",
 }
 
 
