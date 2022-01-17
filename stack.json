@@ -1,0 +1,38 @@
+[
+  FrameInfo(
+    frame=<frame at 0x7f33e4e772e0,
+      file '/rcr/0-development/0-python/CF/CF/SUBM_D/_00_DEBUG.py',
+      line 68,
+      code whoAmI>,
+    filename='/rcr/0-development/0-python/CF/CF/SUBM_D/_00_DEBUG.py',
+    lineno=67,
+    function='whoAmI',
+    code_context=[
+      '    stack = INS.stack()\n'],
+    index=0
+  ),
+  FrameInfo(
+    frame=<frame at 0x56517c3cf5d0,
+      file '/rcr/0-science/0-geo/earthquakeSucker/./doIt.py',
+      line 15,
+      code cherry>,
+    filename='/rcr/0-science/0-geo/earthquakeSucker/./doIt.py',
+    lineno=15,
+    function='cherry',
+    code_context=[
+      '  print(DBG.whoAmI())\n'],
+    index=0
+  ),
+  FrameInfo(
+    frame=<frame at 0x7f33e4e5e020,
+      file '/rcr/0-science/0-geo/earthquakeSucker/./doIt.py',
+      line 17,
+      code <module>>,
+    filename='/rcr/0-science/0-geo/earthquakeSucker/./doIt.py',
+    lineno=17,
+    function='<module>',
+    code_context=[
+      'cherry()\n'],
+    index=0
+  )
+]
