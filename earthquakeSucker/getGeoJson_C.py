@@ -9,28 +9,68 @@ import MySQLdb as DB
 
 
 DEFAULT_DIRECTORY = "/home/will/.cache/earthquakeSucker/"
+DEFAULT_EAST = 180
 DEFAULT_ENUMERATED_VALUES_FILENAME = "./enumeratedValues.json"
 DEFAULT_LIMIT = 20000
+DEFAULT_NORTH = 90
 DEFAULT_OFFSET = 1
+DEFAULT_SOUTH = -90
 DEFAULT_TERM = "hour"  # hour month week day
+DEFAULT_WEST = -180
 GEOJSON_ENUM_URL = """https://earthquake.usgs.gov/fdsnws/event/1/application.json"""
 
 
+BBOX = "bbox"
 BOTTOM = "BOTTOM"
+COORDINATES = "coordinates"
+DEPTH = "depth"
 EAST = "EAST"
+FEATURE
+FEATURES
+
+ID = "id"
+LATITUDE = "latitude"
+LONGITUDE = "longitude"
 NORTH = "NORTH"
 SOUTH = "SOUTH"
 TOP = "TOP"
+TYPE = "type"
 WEST = "WEST"
 
 
-EMPTY_BOUNDING_BOX = {
-    EAST: 180,
-    NORTH: 90,
+EMPTY_BBOX = {
+    EAST: DEFAULT_EAST,
+    NORTH: DEFAULT_NORTH,
     TOP: 0,
-    WEST: -180,
-    SOUTH: -90,
+    WEST: DEFAULT_WEST,
+    SOUTH: DEFAULT_SOUTH,
     BOTTOM: 0,
+}
+
+
+EMPTY_POINT = {
+    COORDINATES: [
+        LONGITUDE: 0,
+        LATITUDE: 0,
+        DEPTH: 0,
+    ]
+    TYPE_: "Point"
+}
+
+
+EMPTY_FEATURE = {
+  geometry: EMPTY_POINT,
+  ID: "",
+  properties: EMPTY_PROPS,
+  type_: "Feature"
+}
+
+
+EMPTY_FEATURE_COLLECTION = {
+    BBOX: EMPTY_BBOX,
+    FEATURES: [],
+    METADATA: EMPTY_METADATA,
+    TYPE: FEATURECOLLECTIONS,
 }
 
 
