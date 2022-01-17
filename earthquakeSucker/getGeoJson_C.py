@@ -25,19 +25,19 @@ BOTTOM = "BOTTOM"
 COORDINATES = "coordinates"
 DEPTH = "depth"
 EAST = "EAST"
-FEATURE
-FEATURES
-
+FEATURE= "Feature"
+FEATURES = "features"
+FEATURE_COLLECTION = "FeatureColection"
+GEOMETRY = "geometry"
 ID = "id"
 LATITUDE = "latitude"
 LONGITUDE = "longitude"
 NORTH = "NORTH"
+PROPERTIES = "properties"
 SOUTH = "SOUTH"
 TOP = "TOP"
 TYPE = "type"
 WEST = "WEST"
-GEOMETRY = "geometry"
-PROPERTIES = "properties"
 
 
 EMPTY_BBOX = {
