@@ -1,0 +1,4 @@
+20220117.235502 ::     self.logIt("Entered _00_LOGME") :: Entered _00_LOGME
+20220117.235522 ::     self.FD_OUT.write(f"""{_myTime_} :: {DBG.whoAmI(stackPosition_=stackPosition_)} :: {textToLog_}{CFV.NEWLINE}""") :: hello
+20220117.235540 ::     self.FD_OUT.write(f"""{_myTime_} :: {DBG.whoAmI(stackPosition_=stackPosition_)} :: {textToLog_}{CFV.NEWLINE}""") :: there
+20220117.235601 ::     self.logIt("Exiting.") :: Exiting.
