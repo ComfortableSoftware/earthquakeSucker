@@ -1,25 +1,14 @@
 
 
 from CF.CONST_D import _00_VALS as CFV
-from CF.SUBM_D import _00_TIME_DT as CFTDT
+from CF.SUBM_D import (
+    _00_TIME_DT as CFTDT,
+    _00_DEBUG as DBG,
+)
 import geojson as GJ
 import urllib3 as URLLIB
 import requests as REQ
 import MySQLdb as DB
-
-
-listOfFileKeys = ['type', 'metadata', 'bbox', 'features']
-# 4
-listOf1stKeys = ['type', 'id', 'geometry', 'properties']
-# 8
-listOfMetaKeys = ['generated', 'url', 'title', 'status', 'api', 'count', 'limit', 'offset']
-# 2
-listOfGeoKeys = ['type', 'coordinates']
-# 0
-listOfFeatureKeys = []
-# 26
-listOfPropertyKeys = ['mag', 'place', 'time', 'updated', 'tz', 'url', 'detail', 'felt', 'cdi', 'mmi', 'alert',
-    'status', 'tsunami', 'sig', 'net', 'code', 'ids', 'sources', 'types', 'nst', 'dmin', 'rms', 'gap', 'magType', 'type', 'title']
 
 
 DEFAULT_DIRECTORY = "/home/will/.cache/earthquakeSucker/"
@@ -32,15 +21,17 @@ DEFAULT_SOUTH = -90
 DEFAULT_TERM = "hour"  # hour month week day
 DEFAULT_WEST = -180
 GEOJSON_ENUM_URL = """https://earthquake.usgs.gov/fdsnws/event/1/application.json"""
-LOG_DIRECTORY = "/storage/logs/USGS/"
+LOG_DIRECTORY = "/storage/logs/earthquakeSucker/"
 
 
 ALERT = "alert"
+API = "api"
 BBOX = "bbox"
 BOTTOM = "BOTTOM"
 CDI = "cdi"
 CODE = "code"
 COORDINATES = "coordinates"
+COUNT = "count"
 DEPTH = "depth"
 DETAIL = "detail"
 DMIN = "dmin"
@@ -50,10 +41,12 @@ FEATURE= "Feature"
 FEATURES = "features"
 FELT = "felt"
 GAP = "gap"
+GENERATED = "generated"
 GEOMETRY = "geometry"
 ID = "id"
 IDS = "ids"
 LATITUDE = "latitude"
+LIMIT = "limit"
 LONGITUDE = "longitude"
 MAG = "mag"
 MAGTYPE = "magType"
@@ -62,6 +55,7 @@ MMI = "mmi"
 NET = "net"
 NORTH = "NORTH"
 NST = "nst"
+OFFSET = "offset"
 PLACE = "place"
 PROPERTIES = "properties"
 RMS = "rms"
@@ -103,39 +97,52 @@ EMPTY_POINT = {
 
 
 EMPTY_PROPS = {
-    ALERT: None,
-    CDI: None,
-    CODE: None,
-    DETAIL: None,
-    DMIN: None,
-    FELT: None,
-    GAP: None,
-    IDS: None,
-    MAG: None,
-    MAGTYPE: None,
-    MMI: None,
-    NET: None,
-    NST: None,
-    PLACE: None,
-    RMS: None,
-    SIG: None,
-    SOURCES: None,
-    STATUS: None,
-    TIME: None,
-    TITLE: None,
-    TSUNAMI: None,
-    TYPE: None,
-    TYPES: None,
-    TZ: None,
-    UPDATED: None,
-    URL: None,
+    ALERT: "",
+    CDI: 0,
+    CODE: "",
+    DETAIL: "",
+    DMIN: 0,
+    FELT: 0,
+    GAP: 0,
+    IDS: "",
+    MAG: 0,
+    MAGTYPE: "",
+    MMI: 0,
+    NET: "",
+    NST: 0,
+    PLACE: "",
+    RMS: 0,
+    SIG: 0,
+    SOURCES: "",
+    STATUS: "",
+    TIME: "",
+    TITLE: "",
+    TSUNAMI: 0,
+    TYPE: "",
+    TYPES: "",
+    TZ: 0,
+    UPDATED: "",
+    URL: "",
 }
 
+
 EMPTY_FEATURE = {
-  GEOMETRY: EMPTY_POINT,
-  ID: "",
-  PROPERTIES: EMPTY_PROPS,
-  TYPE: "Feature"
+    GEOMETRY: EMPTY_POINT,
+    ID: "",
+    PROPERTIES: EMPTY_PROPS,
+    TYPE: "Feature"
+}
+
+
+EMPTY_METADATA = {
+    GENERATED: 0,
+    URL: "",
+    TITLE: "",
+    STATUS: 0,
+    API: "",
+    LIMIT: 0,
+    OFFSET: 0,
+    COUNT: 0,
 }
 
 
@@ -160,11 +167,19 @@ class USGS_C():
       queryURLIn_=None,
   ):
     # fold here ⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2⟱2
+    self.CURRENT_NOW = CFTDT.now()
+    self.CURRENT_FULL_TODAY_STR = CFTDT.todayStrFull(dtObj_=self.CURRENT_NOW)
+    self.CURRENT_HMS = CFTDT.nowStrHMS(dtObj_=self.CURRENT_NOW, separator_="")
+    self.CURRENT_NOW_STR = CFTDT.nowStr(dtObj_=self.CURRENT_NOW)
+    self.CURRENT_TODAY_STR = CFTDT.todayStr(dtObj_=self.CURRENT_NOW)
+    self.LIMIT = DEFAULT_LIMIT
+    self.OFFSET = DEFAULT_OFFSET
+
     # * 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱ 2⟱
     if (
         (filename_ is None)
     ):
-      self.FILENAME = f"""{DEFAULT_DIRECTORY}{CFTDT.nowStr()}.geojson"""
+      self.FILENAME = f"""{DEFAULT_DIRECTORY}{self.CURRENT_NOW_STR}.geojson"""
     # * ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱
     else:
       self.FILENAME = filename_
@@ -175,7 +190,7 @@ class USGS_C():
     ):
       # self.QUERY_URL = geojsonAllSummary("hour")
       # self.QUERY_URL = f"""https://earthquake.usgs.gov/fdsnws/event/1/query.geojson?starttime=2022-01-16%2000:00:00&endtime=2022-01-16%2023:59:59&minmagnitude=-1&orderby=time&limit=20000"""
-      self.QUERY_URL = f"""https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson"""
+      self.QUERY_URL = f"""https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_{DEFAULT_TERM}.geojson"""
     # * ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱ ⟰2⟱
     else:
       self.QUERY_URL = queryURLIn_
@@ -189,15 +204,8 @@ class USGS_C():
     else:
       self.COUNT_URL = countURLIn_
     # * ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2
-    self.CURRENT_NOW = CFTDT.now()
 
-    self.CURRENT_FULL_TODAY_STR = CFTDT.todayStrFull(dtObj_=self.CURRENT_NOW)
-    self.CURRENT_HMS = CFTDT.nowStrHMS(dtObj_=self.CURRENT_NOW, separator_="")
-    self.CURRENT_NOW_STR = CFTDT.nowStr(dtObj_=self.CURRENT_NOW)
-    self.CURRENT_TODAY_STR = CFTDT.todayStr(dtObj_=self.CURRENT_NOW)
-    self.LIMIT = DEFAULT_LIMIT
-    self.LOG_FILENAME = f"""{LOG_DIRECTORY}{CURRENT_NOW_STR}.getGeoJson_C_log.txt"""
-    self.OFFSET = DEFAULT_OFFSET
+    self.LOG_FILENAME = f"""{LOG_DIRECTORY}{self.CURRENT_NOW_STR}.getGeoJson_C_log.txt"""
     self.FD_LOG = open(self.LOG_FILENAME, "tw")
 
     self.logIt("Initialized")
@@ -707,7 +715,7 @@ class USGS_C():
     # * ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2 ⟰2
     with open (_filenameToParse_, "tr") as _FDIn_:
       GJLI = GJ.load(_FDIn_)
-      _FDOut_ = open(f"""{self.CURRENT_HMS}.parsedData.json""", "tw")
+      _FDOut_ = open(f"""{self.CURRENT_NOW_STR}.parsedData.json""", "tw")
       _FDOut_.write(repr(GJLI))
       _FDOut_.flush()
       _FDOut_.close

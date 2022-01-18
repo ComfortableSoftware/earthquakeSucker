@@ -1,3 +1,0 @@
-
-
-import geojson as GJ

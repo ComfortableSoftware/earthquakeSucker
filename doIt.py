@@ -11,11 +11,4 @@ def main():
     GGJ.getAFile()
     GGJ.parseAFile()
 
-def cherry():
-  print(f"""\n\nI am {DBG.whoAmI()}""")
-
-def chapstick():
-  cherry()
-
-cherry()
-chapstick()
+main()
